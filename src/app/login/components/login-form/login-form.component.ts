@@ -5,6 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginUser } from 'src/app/shared/models/login-user.model';
 
 @Component({
   selector: 'app-login-form',
@@ -13,7 +15,7 @@ import {
 })
 export class LoginFormComponent implements OnInit {
   form!: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
   ngOnInit(): void {
     this.createForm();
   }
@@ -22,5 +24,11 @@ export class LoginFormComponent implements OnInit {
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     });
+  }
+  login(): void {
+    const user: LoginUser = this.form.getRawValue() as LoginUser;
+    if (user.password === 'admin' && user.username === 'casacultura') {
+      this.router.navigate(['/home']);
+    }
   }
 }

@@ -24,7 +24,11 @@
       ></p-password>
     </div>
     <div class="m-auto mt-2">
-      <p-button label="INGRESAR" styleClass="p-button-raised"></p-button>
+      <p-button
+        label="INGRESAR"
+        styleClass="p-button-raised"
+        (onClick)="login()"
+      ></p-button>
     </div>
   </form>
 </p-card>
