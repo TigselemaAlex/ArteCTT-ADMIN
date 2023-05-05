@@ -1,6 +1,6 @@
 :host ::ng-deep {
     .p-menu {
-        background: #00008B;
+        background: #18213e;
         border: none;
         .p-menuitem-text {
        color: #fff;
@@ -12,9 +12,7 @@
 }
 
 img {
-    border-radius: 50%;
-    width: 75px;
-    margin-right: 0.5rem; 
+    width: 85px;
   }
 
  p {
@@ -22,6 +20,7 @@ img {
     font-weight: bold;
     width: 90px;
     text-align: center;
+    font-size: 14.5px;
  }
 
  hr {
