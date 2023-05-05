@@ -5,9 +5,13 @@ import { HomeRoutingModule } from './home-routing.module';
 import { MainComponent } from './pages/main/main.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { SharedModule } from '../shared/shared.module';
+import { FeaturedComponent } from './pages/featured/featured.component';
+import { QrCodeComponent } from './pages/qr-code/qr-code.component';
+import { ArtComponent } from './pages/art/art.component';
+import { AgendaComponent } from './pages/agenda/agenda.component';
 
 @NgModule({
-  declarations: [MainComponent, SidenavComponent],
+  declarations: [MainComponent, SidenavComponent, FeaturedComponent, QrCodeComponent, ArtComponent, AgendaComponent],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })
 export class HomeModule {}
