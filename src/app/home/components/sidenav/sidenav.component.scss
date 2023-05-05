@@ -1,9 +1,36 @@
 :host ::ng-deep {
     .p-menu {
         background: #00008B;
-    }
-
-    .p-menuitem-text {
-        background-color: #FFFF;
+        border: none;
+        .p-menuitem-text {
+       color: #fff;
+        }
+        .p-menuitem-icon {
+            color: #fff;
+        }
     }
 }
+
+img {
+    border-radius: 50%;
+    width: 75px;
+    margin-right: 0.5rem; 
+  }
+
+ p {
+    color: #fff;
+    font-weight: bold;
+    width: 90px;
+    text-align: center;
+ }
+
+ hr {
+    color: #fff;
+    width: 90%;
+ }
+
+ .contenedor {
+    display: flex;
+    align-items: center;
+    margin: 7px;
+  }

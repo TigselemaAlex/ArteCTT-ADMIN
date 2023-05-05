@@ -15,19 +15,22 @@ export class SidenavComponent implements OnInit {
       {
         label: 'Destacados',
         icon: PrimeIcons.STAR_FILL,
-        routerLink:'./'
+        routerLink:'./featured'
       },
       {
         label: 'Codigo QR',
         icon: PrimeIcons.QRCODE,
+        routerLink:'./qr-code'
       },
       {
         label: 'Ver Obras',
         icon: PrimeIcons.IMAGE,
+        routerLink:'./art'
       },
       {
         label: 'Agenda',
         icon: PrimeIcons.FILE_EDIT,
+        routerLink:'./agenda'
       }
     ];
   }
