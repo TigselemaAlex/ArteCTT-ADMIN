@@ -2,9 +2,12 @@
     .p-menu {
         background: #18213e;
         border: none;
+
         .p-menuitem-text {
-       color: #fff;
+            font-size: 14px;
+            color: #fff;
         }
+
         .p-menuitem-icon {
             color: #fff;
         }
@@ -13,23 +16,25 @@
 
 img {
     width: 85px;
-  }
+}
 
- p {
+p {
     color: #fff;
     font-weight: bold;
     width: 90px;
     text-align: center;
     font-size: 14.5px;
- }
+}
 
- hr {
+hr {
     color: #fff;
     width: 90%;
- }
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
- .contenedor {
+.contenedor {
     display: flex;
     align-items: center;
-    margin: 7px;
-  }
+    margin: 5px;
+}
