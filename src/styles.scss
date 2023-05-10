@@ -1,12 +1,21 @@
 :root {
   --background-color: #18213e;
+  --light-blue-color: #ddeaff;
+  --cornflower-blue: #6495ed;
 }
 
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 
 body {
   margin: 0;
+  font-family: "Poppins";
+  .container {
+    background-color: var(--light-blue-color);
+    width: 100%;
+    height: 100%;
+  }
 }
