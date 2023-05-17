@@ -1,1 +1,36 @@
 <app-title></app-title>
+<div class="picklist">
+  <p-pickList
+    [source]="artworks"
+    [target]="targetArtworks"
+    sourceHeader="Obras de Arte"
+    targetHeader="Obras Destacadas"
+    [dragdrop]="true"
+    [responsive]="true"
+    [sourceStyle]="{ height: '30rem' }"
+    [targetStyle]="{ height: '30rem' }"
+    filterBy="name"
+    sourceFilterPlaceholder="Buscar por nombre"
+    targetFilterPlaceholder="Buscar por nombre"
+    breakpoint="1200px"
+  >
+    <ng-template let-artwork pTemplate="item">
+      <div class="flex flex-wrap p-2 align-items-center gap-3">
+        <img
+          class="w-4rem shadow-2 flex-shrink-0 border-round"
+          src="https://u7.uidownload.com/vector/499/487/vector-sunset-waterscene-svg.jpg"
+          alt="{artwork.name}"
+        />
+        <div class="flex-1 flex flex-column gap-2">
+          <span class="font-medium text-900">{{ artwork.author }}</span>
+          <span class="font-medium text-900">{{ artwork.country }}</span>
+          <div class="flex align-items-center gap-2">
+            <i class="pi pi-calendar text-sm"></i>
+            <span class="text-900">{{ artwork.date }}</span>
+          </div>
+        </div>
+        <span class="font-bold text-900">{{ artwork.name }}</span>
+      </div>
+    </ng-template>
+  </p-pickList>
+</div>

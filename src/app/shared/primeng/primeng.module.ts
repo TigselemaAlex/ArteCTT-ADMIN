@@ -4,6 +4,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
+import { PickListModule } from 'primeng/picklist';
+import { DataViewModule } from 'primeng/dataview';
+import { TableModule } from 'primeng/table';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -12,6 +16,9 @@ import { MenuModule } from 'primeng/menu';
     PasswordModule,
     ButtonModule,
     MenuModule,
+    PickListModule,
+    DataViewModule,
+    TableModule,
   ],
   exports: [
     CardModule,
@@ -19,6 +26,9 @@ import { MenuModule } from 'primeng/menu';
     PasswordModule,
     ButtonModule,
     MenuModule,
+    PickListModule,
+    DataViewModule,
+    TableModule,
   ],
 })
 export class PrimengModule {}
