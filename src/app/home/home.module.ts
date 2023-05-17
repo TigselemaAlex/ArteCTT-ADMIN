@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { MainComponent } from './pages/main/main.component';
@@ -11,7 +11,14 @@ import { ArtComponent } from './pages/art/art.component';
 import { AgendaComponent } from './pages/agenda/agenda.component';
 
 @NgModule({
-  declarations: [MainComponent, SidenavComponent, FeaturedComponent, QrCodeComponent, ArtComponent, AgendaComponent],
+  declarations: [
+    MainComponent,
+    SidenavComponent,
+    FeaturedComponent,
+    QrCodeComponent,
+    ArtComponent,
+    AgendaComponent,
+  ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })
 export class HomeModule {}
