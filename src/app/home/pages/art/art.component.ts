@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { ArtService } from 'src/app/services/art.service';
 import { ARTWORK_DATA, Artwork } from 'src/app/shared/models/artwork.model';
@@ -6,10 +7,14 @@ import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ArtCreateComponent } from '../../components/art/art-create/art-create.component';
 import { Router } from '@angular/router';
+=======
+import { Component } from '@angular/core';
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
 
 @Component({
   selector: 'app-art',
   templateUrl: './art.component.html',
+<<<<<<< HEAD
   styleUrls: ['./art.component.scss'],
   providers:[DialogService,MessageService]
 })
@@ -56,3 +61,10 @@ export class ArtComponent implements OnInit {
 } 
   }
 
+=======
+  styleUrls: ['./art.component.scss']
+})
+export class ArtComponent {
+
+}
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6

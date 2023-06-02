@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import { Author } from "./author.model";
 
 export interface Artwork {
   id: number;
   author?: Author;
+=======
+export interface Artwork {
+  id: number;
+  author?: string;
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
   name?: string;
   picture: string;
   date: string;
@@ -17,6 +23,7 @@ export interface Artwork {
 export const ARTWORK_DATA: Artwork[] = [
   {
     id: 1,
+<<<<<<< HEAD
     author: {
     id:1,
     nombre:'Vanessa',
@@ -26,6 +33,9 @@ export const ARTWORK_DATA: Artwork[] = [
     ciudad:'Ambato',
     biografia:'Ninguna'
     },
+=======
+    author: 'autor 1',
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
     country: 'Ecuador',
     date: 'Sigo XXI/2021',
     name: 'Atardecer',
@@ -39,6 +49,7 @@ export const ARTWORK_DATA: Artwork[] = [
   },
   {
     id: 2,
+<<<<<<< HEAD
     author: {
     id:2,
     nombre:'Juan',
@@ -48,6 +59,9 @@ export const ARTWORK_DATA: Artwork[] = [
     ciudad:'Pichincha',
     biografia:'Ninguna'
     },
+=======
+    author: 'autor 2',
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
     country: 'Ecuador',
     date: 'Sigo XXI/2021',
     name: 'asdas',
@@ -61,6 +75,7 @@ export const ARTWORK_DATA: Artwork[] = [
   },
   {
     id: 3,
+<<<<<<< HEAD
     author: {
     id:3,
     nombre:'Pablo',
@@ -70,6 +85,9 @@ export const ARTWORK_DATA: Artwork[] = [
     ciudad:'Banos',
     biografia:'Ninguna'
     },
+=======
+    author: 'autor 3',
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
     country: 'Ecuador',
     date: 'Sigo XXI/2021',
     name: 'Pintura 2',
@@ -83,6 +101,7 @@ export const ARTWORK_DATA: Artwork[] = [
   },
   {
     id: 4,
+<<<<<<< HEAD
     author: {
     id:4,
     nombre:'Daniela',
@@ -92,6 +111,9 @@ export const ARTWORK_DATA: Artwork[] = [
     ciudad:'Guayaquil',
     biografia:'Ninguna'
     },
+=======
+    author: 'autor 4',
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
     country: 'Ecuador',
     date: 'Sigo XXI/2021',
     name: 'Atardecer 4',
@@ -105,6 +127,7 @@ export const ARTWORK_DATA: Artwork[] = [
   },
   {
     id: 5,
+<<<<<<< HEAD
     author: {
       id:5,
       nombre:'Juan',
@@ -115,6 +138,9 @@ export const ARTWORK_DATA: Artwork[] = [
       biografia:'Ninguna'
 
     },
+=======
+    author: 'autor 5',
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
     country: 'Ecuador',
     date: 'Sigo XXI/2021',
     name: 'pintura 3',
@@ -128,6 +154,7 @@ export const ARTWORK_DATA: Artwork[] = [
   },
   {
     id: 6,
+<<<<<<< HEAD
     author: {
       id:6,
       nombre:'Juan',
@@ -137,6 +164,9 @@ export const ARTWORK_DATA: Artwork[] = [
       ciudad:'Guayaquil',
       biografia:'Ninguna'
     },
+=======
+    author: 'autor 6',
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
     country: 'Ecuador',
     date: 'Sigo XXI/2021',
     name: 'pintura 4',
@@ -150,6 +180,7 @@ export const ARTWORK_DATA: Artwork[] = [
   },
   {
     id: 7,
+<<<<<<< HEAD
     author: {
       id:7,
       nombre:'Paula',
@@ -159,6 +190,9 @@ export const ARTWORK_DATA: Artwork[] = [
       ciudad:'Guayaquil',
       biografia:'Ninguna'
     },
+=======
+    author: 'autor 7',
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
     country: 'Ecuador',
     date: 'Sigo XXI/2021',
     name: 'pintura 4',
@@ -172,6 +206,7 @@ export const ARTWORK_DATA: Artwork[] = [
   },
   {
     id: 8,
+<<<<<<< HEAD
     author:{
       id:8,
       nombre:'Paola',
@@ -182,6 +217,9 @@ export const ARTWORK_DATA: Artwork[] = [
       biografia:'Ninguna'
 
     },
+=======
+    author: 'autor 8',
+>>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6
     country: 'Ecuador',
     date: 'Sigo XXI/2021',
     name: 'pintura 4',
