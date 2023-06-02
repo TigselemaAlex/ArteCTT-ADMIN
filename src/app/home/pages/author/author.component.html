@@ -1,0 +1,64 @@
+<app-title></app-title>
+
+<div class="p-2 w-11 m-auto mt-4">
+    <div class="mb-3 flex gap-3 ml-2">
+      <p-button
+        label="Nuevo Autor"
+        styleClass="p-button-success"
+        icon="pi pi-plus"
+        (click)=" showDialog()"
+      ></p-button>
+  
+    </div>
+    <div class="card">
+      <p-table
+      [value]="authors"
+        [(selection)]="selectedItems"
+        dataKey="id"
+        [paginator]="true"
+        [rows]="7"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width: 4rem">
+              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Pais</th>
+            <th>Provincia</th>
+            <th>Ciudad</th>
+            <th>Acciones</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+          <tr>
+            <td>
+              <p-tableCheckbox [value]="item"></p-tableCheckbox>
+            </td>
+            <td>
+              {{ item.id }}
+            </td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.apellido }}</td>
+            <td>{{ item.pais }}</td>
+            <td>{{ item.provincia }}</td>
+            <td>{{ item.ciudad }}</td>
+            <td>
+              <p-button
+                styleClass="p-button-rounded p-button-info"
+                icon="pi pi-pencil"
+                (click)="showDialogEdit(item)"
+              ></p-button>
+              <p-button class="deleteButton"
+              styleClass="p-button-rounded p-button-danger"
+              icon="pi pi-delete-left"
+             
+            ></p-button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
