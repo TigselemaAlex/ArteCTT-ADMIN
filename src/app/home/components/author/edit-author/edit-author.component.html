@@ -1,0 +1,62 @@
+<div class="card flex justify-content-center">
+    <p-card header="Datos Generales">
+        <div class="card flex justify-content-center">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="id">Id</label>
+                <input type="number" [disabled]="true" [(ngModel)]="author.id" name="id"  pInputText id="id" aria-describedby="username-help"  />                    
+            </div>
+            
+        </div>
+        <br>
+            <div class="card flex justify-content-center">
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="nombre">Nombre</label>
+                    <input [(ngModel)]="author.nombre" name="nombre"  pInputText id="nombre" aria-describedby="username-help"  />                    
+                </div>
+            </div>
+            <br>
+            <div class="card flex justify-content-center">
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="otrocodigo">Apellido</label>
+                    <input [(ngModel)]="author.apellido" name="apellido" pInputText id="apellido" aria-describedby="username-help"  />                    
+                </div>
+            </div>
+            <br>
+            <div class="card flex justify-content-center">
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="nombre">Pais</label>
+                    <input [(ngModel)]="author.pais" name="pais" pInputText id="pais" aria-describedby="username-help"
+                     />                    
+                </div>
+            </div>
+            <br>
+            <div class="card flex justify-content-center">
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="nombre">Provincia</label>
+                    <input [(ngModel)]="author.provincia" name="provincia" pInputText id="provincia" aria-describedby="username-help"  />                    
+                </div>
+            </div>
+            <br>
+            <div class="card flex justify-content-center">
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="nombre">Ciudad</label>
+                    <input [(ngModel)]="author.ciudad" name="ciudad" pInputText id="ciudad" aria-describedby="username-help"  />                    
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="card flex justify-content-center">
+                <span class="p-float-label">
+                    <textarea id="float-input" rows="5" cols="30" pInputTextarea [(ngModel)]="author.biografia"></textarea>
+                    <label for="float-input">Biografia</label>
+                </span>
+            </div>
+            <br>
+            <div class="guardar">
+                <p-button (click)=" editAuthor()"   label="Editar" icon="pi pi-check"></p-button>
+            </div>
+            
+    </p-card>
+    
+</div>
+

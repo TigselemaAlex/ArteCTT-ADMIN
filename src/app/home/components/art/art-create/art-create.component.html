@@ -1,0 +1,146 @@
+<div class="card flex justify-content-start align-items-start">
+    <p-card header="Datos Generales">
+        <div class="card flex justify-content-center">
+            <div class="flex flex-column gap-2 ">
+                <label htmlFor="codigo">Codigo</label>
+                <input pInputText id="codigo" aria-describedby="username-help" />
+            </div>
+        </div>
+        <br>
+        <div class="card flex justify-content-center">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="otrocodigo">Otros Codigos</label>
+                <input pInputText id="otrocodigo" aria-describedby="username-help" />
+            </div>
+        </div>
+        <br>
+        <div class="card flex justify-content-center">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="nombre">Nombre</label>
+                <input pInputText id="nombre" aria-describedby="username-help" />
+            </div>
+        </div>
+        <br>
+        <div class="card flex justify-content-center">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="nombre">Anio/Siglo</label>
+                <input pInputText id="nombre" aria-describedby="username-help" />
+            </div>
+        </div>
+        <br>
+        <label for="forma">Forma:</label>
+        <div class="p-formgroup-inline">
+          <div class="p-field-radiobutton">
+            <input type="radio" id="firmado" name="forma" value="firmado" >
+            <label for="firmado">Firmado</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <input type="radio" id="atribuido" name="forma" value="atribuido" >
+            <label for="atribuido">Atribuido</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <input type="radio" id="documento" name="forma" value="documento" >
+            <label for="documento">Documento</label>
+          </div>
+        </div>
+        <br>
+        <div class="card flex justify-content-center">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="ubicacion">Ubicacion de la Firma</label>
+                <input pInputText id="ubicacion" aria-describedby="username-help" />
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="autor">Autor:</label>
+            <p-dropdown [options]="authors" [(ngModel)]=" selectedAutor" optionLabel="nombre"></p-dropdown>
+          </div>
+
+          <br>
+          <div class="card flex justify-content-center">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="tecnica">Tecnica</label>
+                <input pInputText id="tecnica" aria-describedby="username-help" />
+            </div>
+        </div> 
+
+        <br>
+
+        <div class="card flex justify-content-center">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="soporte">Soporte</label>
+                <input pInputText id="soporte" aria-describedby="username-help" />
+            </div>
+        </div> 
+    </p-card>
+
+    <br>
+    <p-card header="Estado de Integridad">
+        <label for="integridad">Estado:</label>
+        <div class="p-formgroup-inline">
+          <div class="p-field-radiobutton">
+            <input type="radio" id="completo" name="integridad" value="Completo" >
+            <label for="completo">Completo</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <input type="radio" id="incompleto" name="integridad" value="Incompleto" >
+            <label for="atribuido">Incompleto</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <input type="radio" id="unido" name="integridad" value="Unido" >
+            <label for="unido">Unido</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <input type="radio" id="fragmentado" name="integridad" value="Fragmentado" >
+            <label for="fragmentado">Fragmentado</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <input type="radio" id="agregado" name="integridad" value="Agregado" >
+            <label for="agregado">Agregado</label>
+          </div>
+        </div>
+       
+    </p-card>
+    <br>
+    <p-card header="Estado de Conservacion">
+        <label for="estado">Estado:</label>
+        <div class="p-formgroup-inline">
+          <div class="p-field-radiobutton">
+            <input type="radio" id="firmado" name="estado" value="Bueno" >
+            <label for="firmado">Bueno</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <input type="radio" id="atribuido" name="estado" value="Regular" >
+            <label for="atribuido">Regular</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <input type="radio" id="documento" name="estado" value="Malo" >
+            <label for="documento">Malo</label>
+          </div>
+        </div>
+       
+    </p-card>
+</div>
+<br>
+<div>
+    <p-card header="Ingreso">
+        <div class="card flex justify-content-left">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="ingreso">Forma de Ingreso</label>
+                <input pInputText id="ingreso" aria-describedby="username-help" />
+            </div>
+        </div> 
+        <div class="card flex justify-content-left">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="valor">Forma de Ingreso</label>
+                <input pInputText id="valor" aria-describedby="username-help" />
+            </div>
+        </div> 
+        <div class="card flex justify-content-left">
+            <div class="flex flex-column gap-4">
+                <label htmlFor="valor">Valor USD</label>
+                <input pInputText id="valor" aria-describedby="username-help" />
+            </div>
+        </div> 
+    </p-card>
+</div>
