@@ -1,8 +1,13 @@
+.buttonEdit{
+    text-align: center;
+    width: 900px;
+}
 .card-content {
     font-size: 12px;
     padding: 5px;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
+    
   }
   .flex-container {
     display: flex;
@@ -32,6 +37,5 @@
   }
   
   .card-dimensions {
-    width: 400px; /* Ajusta el ancho según sea necesario */
+    width: 500px; /* Ajusta el ancho según sea necesario */
   }
-  

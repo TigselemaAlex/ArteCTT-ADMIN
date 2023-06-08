@@ -1,5 +1,4 @@
 <app-title></app-title>
-<<<<<<< HEAD
 
 <div class="p-2 w-11 m-auto mt-4">
     <div class="mb-3 flex gap-3 ml-2">
@@ -28,9 +27,7 @@
       >
         <ng-template pTemplate="header">
           <tr>
-            <th style="width: 4rem">
-              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-            </th>
+           
             <th>ID</th>
             <th>Nombre</th>
             <th>Siglo</th>
@@ -42,9 +39,6 @@
         <ng-template pTemplate="body" let-item>
           <tr>
             <td>
-              <p-tableCheckbox [value]="item"></p-tableCheckbox>
-            </td>
-            <td>
               {{ item.id }}
             </td>
             <td>{{ item.author.nombre }}</td>
@@ -54,10 +48,7 @@
               <p-button
                 styleClass="p-button-rounded p-button-info"
                 icon="pi pi-pencil"
-              ></p-button>
-              <p-button
-                styleClass="p-button-rounded p-button-success"
-                icon="pi pi-eye"
+                (click)="editDialog(item)"
               ></p-button>
               <p-button class="deleteButton"
               styleClass="p-button-rounded p-button-danger"
@@ -70,5 +61,3 @@
       </p-table>
     </div>
   </div>
-=======
->>>>>>> 37d22e1487fa0b28a989708add4d51fcdc2ad4a6

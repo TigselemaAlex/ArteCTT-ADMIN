@@ -7,6 +7,7 @@ import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { CreateAuthorComponent } from '../../components/author/create-author/create-author.component';
 import { EditAuthorComponent } from '../../components/author/edit-author/edit-author.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-author',
@@ -22,12 +23,20 @@ export class AuthorComponent implements OnInit {
   ref!:DynamicDialogRef;
 
   constructor(private authorsService:ArtService,public dialogService:DialogService,
-    public messageService:MessageService){
+    public messageService:MessageService,private location:Location){
 
   }
 
   ngOnInit(): void {
     this.authors=this.authorsService.getAllAuthors();
+  }
+
+  deleteAuthor(id:number){
+    this.authorsService.deleteAuthor(id)
+  }
+
+  return(){
+    this.location.back();
   }
 
   showDialog(){

@@ -1,146 +1,230 @@
-<div class="card flex justify-content-start align-items-start">
+<div class="card-container">
+  <div class="card flex justify-content-start align-items-start">
     <p-card header="Datos Generales">
-        <div class="card flex justify-content-center">
-            <div class="flex flex-column gap-2 ">
-                <label htmlFor="codigo">Codigo</label>
-                <input pInputText id="codigo" aria-describedby="username-help" />
+      <div class="card flex justify-content-center flex-wrap">
+        <div class="flex-container">
+          <div class="card-content">
+            <div class="card-label">
+              <label htmlFor="codigo">Codigo</label>
             </div>
-        </div>
-        <br>
-        <div class="card flex justify-content-center">
-            <div class="flex flex-column gap-2">
-                <label htmlFor="otrocodigo">Otros Codigos</label>
-                <input pInputText id="otrocodigo" aria-describedby="username-help" />
+            <div class="card-input">
+              <input [(ngModel)]="art.id" pInputText id="codigo" aria-describedby="username-help" />
             </div>
-        </div>
-        <br>
-        <div class="card flex justify-content-center">
-            <div class="flex flex-column gap-2">
-                <label htmlFor="nombre">Nombre</label>
-                <input pInputText id="nombre" aria-describedby="username-help" />
-            </div>
-        </div>
-        <br>
-        <div class="card flex justify-content-center">
-            <div class="flex flex-column gap-2">
-                <label htmlFor="nombre">Anio/Siglo</label>
-                <input pInputText id="nombre" aria-describedby="username-help" />
-            </div>
-        </div>
-        <br>
-        <label for="forma">Forma:</label>
-        <div class="p-formgroup-inline">
-          <div class="p-field-radiobutton">
-            <input type="radio" id="firmado" name="forma" value="firmado" >
-            <label for="firmado">Firmado</label>
           </div>
-          <div class="p-field-radiobutton">
-            <input type="radio" id="atribuido" name="forma" value="atribuido" >
-            <label for="atribuido">Atribuido</label>
-          </div>
-          <div class="p-field-radiobutton">
-            <input type="radio" id="documento" name="forma" value="documento" >
-            <label for="documento">Documento</label>
+          <div class="card-content">
+            <div class="card-label">
+              <label htmlFor="otrocodigo">Otros Codigos</label>
+            </div>
+            <div class="card-input">
+              <input [(ngModel)]="art.otherid" pInputText id="otrocodigo" aria-describedby="username-help" />
+            </div>
           </div>
         </div>
-        <br>
-        <div class="card flex justify-content-center">
-            <div class="flex flex-column gap-2">
-                <label htmlFor="ubicacion">Ubicacion de la Firma</label>
-                <input pInputText id="ubicacion" aria-describedby="username-help" />
+      </div>
+      <br>
+      <div class="card flex justify-content-center flex-wrap">
+        <div class="flex-container">
+          <div class="card-content">
+            <div class="card-label">
+              <label htmlFor="nombre">Nombre</label>
             </div>
-        </div>
-        <br>
-        <div>
-            <label for="autor">Autor:</label>
-            <p-dropdown [options]="authors" [(ngModel)]=" selectedAutor" optionLabel="nombre"></p-dropdown>
+            <div class="card-input">
+              <input [(ngModel)]="art.name" pInputText id="nombre" aria-describedby="username-help" />
+            </div>
           </div>
-
           <br>
-          <div class="card flex justify-content-center">
-            <div class="flex flex-column gap-2">
-                <label htmlFor="tecnica">Tecnica</label>
-                <input pInputText id="tecnica" aria-describedby="username-help" />
+          <div class="card-content">
+            <div class="card-label">
+              <label htmlFor="nombre">Anio/Siglo</label>
             </div>
-        </div> 
-
-        <br>
-
-        <div class="card flex justify-content-center">
-            <div class="flex flex-column gap-2">
-                <label htmlFor="soporte">Soporte</label>
-                <input pInputText id="soporte" aria-describedby="username-help" />
+            <div class="card-input">
+              <input [(ngModel)]="art.date" pInputText id="nombre" aria-describedby="username-help" />
             </div>
-        </div> 
-    </p-card>
-
-    <br>
-    <p-card header="Estado de Integridad">
-        <label for="integridad">Estado:</label>
-        <div class="p-formgroup-inline">
-          <div class="p-field-radiobutton">
-            <input type="radio" id="completo" name="integridad" value="Completo" >
-            <label for="completo">Completo</label>
-          </div>
-          <div class="p-field-radiobutton">
-            <input type="radio" id="incompleto" name="integridad" value="Incompleto" >
-            <label for="atribuido">Incompleto</label>
-          </div>
-          <div class="p-field-radiobutton">
-            <input type="radio" id="unido" name="integridad" value="Unido" >
-            <label for="unido">Unido</label>
-          </div>
-          <div class="p-field-radiobutton">
-            <input type="radio" id="fragmentado" name="integridad" value="Fragmentado" >
-            <label for="fragmentado">Fragmentado</label>
-          </div>
-          <div class="p-field-radiobutton">
-            <input type="radio" id="agregado" name="integridad" value="Agregado" >
-            <label for="agregado">Agregado</label>
           </div>
         </div>
-       
-    </p-card>
-    <br>
-    <p-card header="Estado de Conservacion">
-        <label for="estado">Estado:</label>
-        <div class="p-formgroup-inline">
-          <div class="p-field-radiobutton">
-            <input type="radio" id="firmado" name="estado" value="Bueno" >
-            <label for="firmado">Bueno</label>
-          </div>
-          <div class="p-field-radiobutton">
-            <input type="radio" id="atribuido" name="estado" value="Regular" >
-            <label for="atribuido">Regular</label>
-          </div>
-          <div class="p-field-radiobutton">
-            <input type="radio" id="documento" name="estado" value="Malo" >
-            <label for="documento">Malo</label>
+      </div>
+      <br>
+      <label for="forma">Forma:</label>
+      <div class="p-formgroup-inline">
+        <div class="p-field-radiobutton">
+          <input [(ngModel)]="art.signature" type="radio" id="firmado" name="forma" value="Firmado">
+          <label for="firmado">Firmado</label>
+        </div>
+        <div class="p-field-radiobutton">
+          <input [(ngModel)]="art.signature" type="radio" id="atribuido" name="forma" value="Atribuido">
+          <label for="atribuido">Atribuido</label>
+        </div>
+        <div class="p-field-radiobutton">
+          <input [(ngModel)]="art.signature" type="radio" id="documento" name="forma" value="Documento">
+          <label for="documento">Documento</label>
+        </div>
+      </div>
+      <br>
+      <div class="card flex justify-content-left">
+        <div class="flex flex-column gap-2">
+          <label htmlFor="ubicacion">Ubicacion de la Firma</label>
+          <input class="inputf" [(ngModel)]="art.ubication" pInputText id="ubicacion" aria-describedby="username-help" />
+        </div>
+      </div>
+      <br>
+      <div class="card flex justify-content-left">
+        <div class="flex-container">
+          <label htmlFor="autor">Autor:</label>
+          <p-dropdown [options]="authors" [(ngModel)]="selectedAutor" id="autor" optionLabel="nombre"></p-dropdown>
+        </div>
+      </div>
+
+      <br>
+      <div class="card flex justify-content-left flex-wrap">
+        <div >
+          <div class="card-content">
+            <div class="card-label" >
+              <label htmlFor="tecnica">Tecnica</label>
+            </div>
+            <div class="card-input">
+              <input [(ngModel)]="art.technique" pInputText id="tecnica" aria-describedby="username-help" />
+            </div>
+            <div class="card-label">
+              <label htmlFor="soporte">Soporte</label>
+            </div>
+            <div class="card-input">
+              <input [(ngModel)]="art.support" pInputText id="soporte" aria-describedby="username-help" />
+            </div>
           </div>
         </div>
-       
+      </div>
     </p-card>
+  </div>
 </div>
+
+
+<br>
+<p-card header="Estado de Integridad">
+  <label for="integridad">Estado:</label>
+  <div class="p-formgroup-inline">
+    <div class="p-field-radiobutton">
+      <input [(ngModel)]="art.stateI" type="radio" id="completo" name="integridad" value="Completo">
+      <label for="completo">Completo</label>
+    </div>
+    <div class="p-field-radiobutton">
+      <input [(ngModel)]="art.stateI" type="radio" id="incompleto" name="integridad" value="Incompleto">
+      <label for="atribuido">Incompleto</label>
+    </div>
+    <div class="p-field-radiobutton">
+      <input [(ngModel)]="art.stateI" type="radio" id="unido" name="integridad" value="Unido">
+      <label for="unido">Unido</label>
+    </div>
+    <div class="p-field-radiobutton">
+      <input [(ngModel)]="art.stateI" type="radio" id="fragmentado" name="integridad" value="Fragmentado">
+      <label for="fragmentado">Fragmentado</label>
+    </div>
+    <div class="p-field-radiobutton">
+      <input [(ngModel)]="art.stateI" type="radio" id="agregado" name="integridad" value="Agregado">
+      <label for="agregado">Agregado</label>
+    </div>
+  </div>
+
+</p-card>
+<br>
+  <p-card header="Estado de Conservacion">
+    <label for="estado">Estado:</label>
+    <div class="p-formgroup-inline">
+      <div class="p-field-radiobutton">
+        <input [(ngModel)]="art.stateC" type="radio" id="firmado" name="estado" value="Bueno">
+        <label for="firmado">Bueno</label>
+      </div>
+      <div class="p-field-radiobutton">
+        <input [(ngModel)]="art.stateC" type="radio" id="atribuido" name="estado" value="Regular">
+        <label for="atribuido">Regular</label>
+      </div>
+      <div class="p-field-radiobutton">
+        <input [(ngModel)]="art.stateC" type="radio" id="documento" name="estado" value="Malo">
+        <label for="documento">Malo</label>
+      </div>
+    </div>
+  </p-card>
 <br>
 <div>
-    <p-card header="Ingreso">
-        <div class="card flex justify-content-left">
-            <div class="flex flex-column gap-2">
-                <label htmlFor="ingreso">Forma de Ingreso</label>
-                <input pInputText id="ingreso" aria-describedby="username-help" />
-            </div>
-        </div> 
-        <div class="card flex justify-content-left">
-            <div class="flex flex-column gap-2">
-                <label htmlFor="valor">Forma de Ingreso</label>
-                <input pInputText id="valor" aria-describedby="username-help" />
-            </div>
-        </div> 
-        <div class="card flex justify-content-left">
-            <div class="flex flex-column gap-4">
-                <label htmlFor="valor">Valor USD</label>
-                <input pInputText id="valor" aria-describedby="username-help" />
-            </div>
-        </div> 
-    </p-card>
+  <p-card header="Ingreso">
+    <div class="card flex justify-content-left">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="ingreso">Forma de Ingreso</label>
+        <input [(ngModel)]="art.formaIngreso" pInputText id="ingreso" aria-describedby="username-help" />
+      </div>
+    </div>
+    <br>
+    <div class="card flex justify-content-left">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="valor">Valor USD</label>
+        <input [(ngModel)]="art.ValorUSD" type="number" pInputText id="valor" aria-describedby="username-help" />
+      </div>
+    </div>
+    <br>
+    <div class="card flex justify-content-left">
+      <div class="flex flex-column gap-4">
+        <label htmlFor="avaluo">Avaluo</label>
+        <input [(ngModel)]="art.avaluo" type="number" pInputText id="avaluo" aria-describedby="username-help" />
+      </div>
+    </div>
+    <br>
+    <div class="card flex justify-content-left">
+      <p-calendar [(ngModel)]="art.fechaIngreso" id="ingreso" [showIcon]="true"
+        placeholder="Fecha Ingreso"></p-calendar>
+    </div>
+    <br>
+    <div class="card flex justify-content-left">
+      <p-calendar [(ngModel)]="art.fechaRegistro" id="registro" [showIcon]="true"
+        placeholder="Fecha Registro"></p-calendar>
+    </div>
+    <br>
+    <div class="card flex justify-content-left">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="observaciones">Observaciones</label>
+        <input [(ngModel)]="art.observation" pInputText id="observaciones" aria-describedby="username-help" />
+      </div>
+    </div>
+  </p-card>
+  <br>
+  <p-card header="Imagen de la Pintura" class="card-picture">
+    <div class="card flex justify-content-center">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="imagen">Link de la imagen:</label>
+        <input [(ngModel)]="art.picture" pInputText id="imagen" aria-describedby="username-help" />
+      </div>
+    </div>
+  </p-card>
+  <br>
+  <p-card header="Dimensiones" class="card-dimensions">
+    <div class="card flex justify-content-center">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="cm">Obra en cm</label>
+        <input [(ngModel)]="art.dimensions.width" type="number" pInputText id="cm" aria-describedby="username-help" />
+        <input [(ngModel)]="art.dimensions.height" type="number" pInputText id="cm" aria-describedby="username-help" />
+        <input [(ngModel)]="art.dimensions.prof" type="number" pInputText id="cm" aria-describedby="username-help" />
+        <input [(ngModel)]="art.dimensions.dm" type="number" pInputText id="cm" aria-describedby="username-help" />
+        <input [(ngModel)]="art.dimensions.dme" type="number" pInputText id="cm" aria-describedby="username-help" />
+      </div>
+
+      <div class="flex flex-column gap-2">
+        <label htmlFor="plancha">Obra en cm</label>
+        <input [(ngModel)]="art.dimensions.pa" type="number" pInputText id="plancha" aria-describedby="username-help" />
+        <input [(ngModel)]="art.dimensions.pan" type="number" pInputText id="plancha"
+          aria-describedby="username-help" />
+        <input [(ngModel)]="art.dimensions.pnum" type="number" pInputText id="plancha"
+          aria-describedby="username-help" />
+      </div>
+
+      <div class="flex flex-column gap-2">
+        <label htmlFor="marco">Marco/Elemento</label>
+        <input [(ngModel)]="art.dimensions.ma" type="number" pInputText id="marco" aria-describedby="username-help" />
+        <input [(ngModel)]="art.dimensions.man" type="number" pInputText id="marco" aria-describedby="username-help" />
+        <input [(ngModel)]="art.dimensions.mprof" type="number" pInputText id="marco"
+          aria-describedby="username-help" />
+      </div>
+    </div>
+  </p-card>
+  <br>
+  <div class="buttonCreate">
+    <p-button (click)="createArt()" label="Guardar" icon="pi pi-check"></p-button>
+  </div>
 </div>

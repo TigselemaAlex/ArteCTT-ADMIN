@@ -8,6 +8,12 @@
         icon="pi pi-plus"
         (click)=" showDialog()"
       ></p-button>
+      <p-button
+      label="Volver"
+                styleClass="p-button-rounded p-button-info"
+                icon="pi pi-backward"   
+                (click)="return()"    
+       ></p-button>
   
     </div>
     <div class="card">
@@ -54,7 +60,7 @@
               <p-button class="deleteButton"
               styleClass="p-button-rounded p-button-danger"
               icon="pi pi-delete-left"
-             
+             (click)="deleteAuthor(item.id)"
             ></p-button>
             </td>
           </tr>
