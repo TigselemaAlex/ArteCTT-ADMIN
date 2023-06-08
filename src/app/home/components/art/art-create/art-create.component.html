@@ -104,7 +104,7 @@
               <div class="flex flex-column gap-2">
                 <label htmlFor="imagen">Link de la imagen:</label>
                 <input [(ngModel)]="art.picture" pInputText id="imagen" aria-describedby="username-help" />
-                <img src="https://www.adorama.com/alc/wp-content/uploads/2021/05/bird-wings-flying-feature.gif" alt="GIF">
+                <p-image src={{art.picture}} alt="Image" width="250" [preview]="true"></p-image>
               </div>
             </div>
           </p-card>
