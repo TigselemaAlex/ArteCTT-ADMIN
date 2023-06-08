@@ -44,7 +44,7 @@ export class ArtComponent implements OnInit {
       header:'Crear Registro de Pintura',
       width:'70%',
       height:'80%',
-      maximizable:true
+      maximizable:false
     }) 
 
     this.ref.onClose.subscribe((resul)=>{
@@ -62,7 +62,7 @@ export class ArtComponent implements OnInit {
       width:'70%',
       height:'80%',
       data:art,
-      maximizable:true
+      maximizable:false
     })
     this.ref.onClose.subscribe((resul)=>{
       this.artService.getAllArtWorks();

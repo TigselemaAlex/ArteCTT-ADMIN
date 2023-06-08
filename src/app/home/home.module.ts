@@ -22,6 +22,8 @@ import { CalendarModule } from 'primeng/calendar';
 import { ImageModule } from 'primeng/image';
 import { ArtEditComponent } from './components/art/art-edit/art-edit.component';
 
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
 @NgModule({
   declarations: [
     MainComponent,
@@ -37,6 +39,6 @@ import { ArtEditComponent } from './components/art/art-edit/art-edit.component';
     ArtEditComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule,FormsModule,RadioButtonModule,
-  DropdownModule,CalendarModule,ImageModule],
+  DropdownModule,CalendarModule,ImageModule,ProgressSpinnerModule],
 })
 export class HomeModule {}
