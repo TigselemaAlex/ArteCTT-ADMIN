@@ -1,128 +1,75 @@
+import { Author } from './author.model';
+
+export enum DeliveryType {
+  firmado = 'FIRMADO',
+  atribuido = 'ATRIBUIDO',
+  documento = 'DOCUMENTO',
+}
+export enum ConservationState {
+  bueno = 'BUENO',
+  regular = 'REGULAR',
+  malo = 'MALO',
+}
+export enum IntegrityState {
+  completo = 'COMPLETO',
+  incompleto = 'INCOMPLETO',
+  unido = 'UNIDO',
+}
+
 export interface Artwork {
-  id: number;
-  author?: string;
-  name?: string;
-  picture: string;
-  date: string;
+  code: string;
+  other_code?: string;
+  name: string;
+  centuryYear: string;
+  deliveryType: DeliveryType;
+  signatureLocation: string;
   country: string;
+  technique: string;
+  support: string;
+  conservationState: ConservationState;
+  integrityState: IntegrityState;
+  incomeForm?: string;
+  incomePrice?: number;
+  incomeYear?: number;
+  value?: number;
+  pieceHeight?: number;
+  pieceWidth?: number;
+  pieceDeep?: number;
+  gravingHeight?: number;
+  gravingWidth?: number;
+  frameElementHeight?: number;
+  frameElementWidth?: number;
+  imageURL: string;
   observation?: string;
-  dimensions: {
-    width: number;
-    height: number;
-  };
+  location: string;
+  recordedBy: string;
+  reviewedBy: string;
+  registeredDate?: Date;
+  author?: Author;
 }
 
 export const ARTWORK_DATA: Artwork[] = [
   {
-    id: 1,
-    author: 'autor 1',
+    code: 'COD1',
+    other_code: 'COD12',
+    name: 'pintura 1',
+    centuryYear: 'SIGO XX',
+    deliveryType: DeliveryType.atribuido,
+    signatureLocation: 'Borde inferior derecho',
     country: 'Ecuador',
-    date: 'Sigo XXI/2021',
-    name: 'Atardecer',
-    observation:
-      'El cuadro tine la firma del autor en la esquina inferior derecha',
-    picture: '',
-    dimensions: {
-      width: 73,
-      height: 120,
-    },
-  },
-  {
-    id: 2,
-    author: 'autor 2',
-    country: 'Ecuador',
-    date: 'Sigo XXI/2021',
-    name: 'asdas',
-    observation:
-      'El cuadro tine la firma del autor en la esquina inferior derecha',
-    picture: '',
-    dimensions: {
-      width: 73,
-      height: 120,
-    },
-  },
-  {
-    id: 3,
-    author: 'autor 3',
-    country: 'Ecuador',
-    date: 'Sigo XXI/2021',
-    name: 'Pintura 2',
-    observation:
-      'El cuadro tine la firma del autor en la esquina inferior derecha',
-    picture: '',
-    dimensions: {
-      width: 73,
-      height: 120,
-    },
-  },
-  {
-    id: 4,
-    author: 'autor 4',
-    country: 'Ecuador',
-    date: 'Sigo XXI/2021',
-    name: 'Atardecer 4',
-    observation:
-      'El cuadro tine la firma del autor en la esquina inferior derecha',
-    picture: '',
-    dimensions: {
-      width: 73,
-      height: 120,
-    },
-  },
-  {
-    id: 5,
-    author: 'autor 5',
-    country: 'Ecuador',
-    date: 'Sigo XXI/2021',
-    name: 'pintura 3',
-    observation:
-      'El cuadro tine la firma del autor en la esquina inferior derecha',
-    picture: '',
-    dimensions: {
-      width: 73,
-      height: 120,
-    },
-  },
-  {
-    id: 6,
-    author: 'autor 6',
-    country: 'Ecuador',
-    date: 'Sigo XXI/2021',
-    name: 'pintura 4',
-    observation:
-      'El cuadro tine la firma del autor en la esquina inferior derecha',
-    picture: '',
-    dimensions: {
-      width: 73,
-      height: 120,
-    },
-  },
-  {
-    id: 7,
-    author: 'autor 7',
-    country: 'Ecuador',
-    date: 'Sigo XXI/2021',
-    name: 'pintura 4',
-    observation:
-      'El cuadro tine la firma del autor en la esquina inferior derecha',
-    picture: '',
-    dimensions: {
-      width: 73,
-      height: 120,
-    },
-  },
-  {
-    id: 8,
-    author: 'autor 8',
-    country: 'Ecuador',
-    date: 'Sigo XXI/2021',
-    name: 'pintura 4',
-    observation:
-      'El cuadro tine la firma del autor en la esquina inferior derecha',
-    picture: '',
-    dimensions: {
-      width: 73,
-      height: 120,
-    },
+    technique: 'Acuarela',
+    support: 'Cartulina',
+    conservationState: ConservationState.bueno,
+    integrityState: IntegrityState.completo,
+    incomeForm: 'Compra',
+    incomePrice: 200,
+    incomeYear: 2009,
+    value: 350,
+    imageURL:
+      'https://culturatungurahua.com/wp-content/uploads/2022/12/cuadro-24.gif',
+    observation: 'observaciones',
+    location: 'Museo casa de la cultura',
+    recordedBy: 'Martha Molina',
+    reviewedBy: 'Juan Luis Siguenza',
   },
 ];

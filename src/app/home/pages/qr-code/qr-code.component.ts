@@ -18,7 +18,7 @@ export class QrCodeComponent implements OnInit {
   }
 
   generateQRCode(artwork: Artwork): void {
-    this.qrCode = artwork.id.toString();
+    this.qrCode = artwork.code;
     this.imageTitle = artwork.name!;
   }
 

@@ -32,7 +32,9 @@
                 alt="{artwork.name}"
               />
               <div class="grid">
-                <div class="col-6">{{ artwork.author }}</div>
+                <div class="col-6">
+                  {{ artwork.author.fullName ?? "Anónimo" }}
+                </div>
                 <div class="col-6">{{ artwork.name }}</div>
                 <div class="col-6">{{ artwork.country }}</div>
                 <div class="col-6">{{ artwork.date }}</div>
