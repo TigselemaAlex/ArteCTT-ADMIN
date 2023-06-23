@@ -7,6 +7,9 @@ import { MenuModule } from 'primeng/menu';
 import { PickListModule } from 'primeng/picklist';
 import { DataViewModule } from 'primeng/dataview';
 import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
+import { CalendarModule } from 'primeng/calendar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [],
@@ -19,6 +22,9 @@ import { TableModule } from 'primeng/table';
     PickListModule,
     DataViewModule,
     TableModule,
+    DialogModule,
+    CalendarModule,
+    InputTextareaModule,
   ],
   exports: [
     CardModule,
@@ -29,6 +35,9 @@ import { TableModule } from 'primeng/table';
     PickListModule,
     DataViewModule,
     TableModule,
+    DialogModule,
+    CalendarModule,
+    InputTextareaModule,
   ],
 })
 export class PrimengModule {}
