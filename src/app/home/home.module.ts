@@ -10,6 +10,7 @@ import { QrCodeComponent } from './pages/qr-code/qr-code.component';
 import { ArtComponent } from './pages/art/art.component';
 import { AgendaComponent } from './pages/agenda/agenda.component';
 import { FormComponent } from './pages/agenda/form/form.component';
+import { ArtworkFormComponent } from './pages/art/artwork-form/artwork-form.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormComponent } from './pages/agenda/form/form.component';
     ArtComponent,
     AgendaComponent,
     FormComponent,
+    ArtworkFormComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })

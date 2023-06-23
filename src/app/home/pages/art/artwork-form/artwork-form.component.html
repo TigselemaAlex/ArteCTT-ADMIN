@@ -1,0 +1,32 @@
+<p-dialog
+  header="Registro de Pinturas"
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '500px' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="onClose()"
+>
+  <form>
+    <div class="flex flex-column gap-2">
+      
+    </div>
+
+    <div class="flex justify-content-end mt-2">
+      <span class="p-buttonset">
+        <p-button
+          pRipple
+          label="Aceptar"
+          icon="pi pi-check"
+          styleClass="p-button-raised p-button-text p-button-info"
+        ></p-button>
+        <p-button
+          pRipple
+          label="Cancelar"
+          icon="pi pi-times"
+          styleClass="p-button-raised p-button-text p-button-danger"
+        ></p-button>
+      </span>
+    </div>
+  </form>
+</p-dialog>
