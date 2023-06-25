@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as printJS from 'print-js';
 import { ARTWORK_DATA, Artwork } from 'src/app/shared/models/artwork.model';
+import { ArtworkService } from 'src/app/shared/services/artwork.service';
 
 @Component({
   selector: 'app-qr-code',
@@ -12,9 +13,15 @@ export class QrCodeComponent implements OnInit {
   qrCode: string = '';
   imageTitle: string = '';
 
-  constructor() {}
+  constructor(private artworkService: ArtworkService) {}
   ngOnInit(): void {
-    this.artworks = ARTWORK_DATA;
+    this.getAllArtworksService();
+  }
+
+  private getAllArtworksService() {
+    this.artworkService.getAllArtworks().subscribe((resp) => {
+      this.artworks = resp;
+    });
   }
 
   generateQRCode(artwork: Artwork): void {

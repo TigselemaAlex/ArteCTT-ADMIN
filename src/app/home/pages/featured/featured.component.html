@@ -16,19 +16,32 @@
   >
     <ng-template let-artwork pTemplate="item">
       <div class="flex flex-wrap p-2 align-items-center gap-3">
-        <img [src]="" alt="" />
+        <img
+          [src]="artwork.imageURL"
+          alt="artwork.name"
+          width="120"
+          height="120"
+        />
         <div class="flex-1 flex flex-column gap-2">
-          <span class="font-medium text-900">{{
+          <span class="font-medium text-green-700">{{
             artwork.author?.fullName ?? "Anónimo"
           }}</span>
-          <span class="font-medium text-900">{{ artwork.country }}</span>
+          <span class="font-medium text-green-700">{{ artwork.country }}</span>
           <div class="flex align-items-center gap-2">
             <i class="pi pi-calendar text-sm"></i>
-            <span class="text-900">{{ artwork.date }}</span>
+            <span class="text-blue-800">{{ artwork.centuryYear }}</span>
           </div>
         </div>
         <span class="font-bold text-900">{{ artwork.name }}</span>
       </div>
     </ng-template>
   </p-pickList>
+  <div class="flex justify-content-center my-4">
+    <p-button
+      label="Guardar"
+      styleClass="p-button-raised p-button-success"
+      icon="pi pi-check"
+      (onClick)="saveFeatures()"
+    ></p-button>
+  </div>
 </div>
