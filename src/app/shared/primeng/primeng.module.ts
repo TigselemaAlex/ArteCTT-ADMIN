@@ -15,6 +15,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FileUploadModule } from 'primeng/fileupload';
 
+import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [],
   imports: [
@@ -32,7 +33,8 @@ import { FileUploadModule } from 'primeng/fileupload';
     CascadeSelectModule,
     DropdownModule,
     InputNumberModule,
-    FileUploadModule
+    FileUploadModule,
+    ToastModule,
   ],
   exports: [
     CardModule,
@@ -49,7 +51,8 @@ import { FileUploadModule } from 'primeng/fileupload';
     CascadeSelectModule,
     DropdownModule,
     InputNumberModule,
-    FileUploadModule
+    FileUploadModule,
+    ToastModule,
   ],
 })
 export class PrimengModule {}

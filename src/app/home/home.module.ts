@@ -11,6 +11,8 @@ import { ArtComponent } from './pages/art/art.component';
 import { AgendaComponent } from './pages/agenda/agenda.component';
 import { FormComponent } from './pages/agenda/form/form.component';
 import { ArtworkFormComponent } from './pages/art/artwork-form/artwork-form.component';
+import { ArtworkService } from '../shared/services/artwork.service';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -24,5 +26,6 @@ import { ArtworkFormComponent } from './pages/art/artwork-form/artwork-form.comp
     ArtworkFormComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
+  providers: [ArtworkService, MessageService],
 })
 export class HomeModule {}
