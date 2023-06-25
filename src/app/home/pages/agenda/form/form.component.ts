@@ -15,11 +15,13 @@ export class FormComponent implements OnInit {
     this.formService.open$.subscribe({
       next: (resp) => {
         this.visible = resp.open;
+        console.log("no3");
       },
     });
   }
 
   onClose(): void {
     this.formService.onOpen({ open: false, data: this.agendaItem });
+    console.log("no3");
   }
 }

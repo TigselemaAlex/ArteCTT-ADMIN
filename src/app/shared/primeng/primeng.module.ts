@@ -10,6 +10,11 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { FileUploadModule } from 'primeng/fileupload';
+
 import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [],
@@ -25,6 +30,10 @@ import { ToastModule } from 'primeng/toast';
     DialogModule,
     CalendarModule,
     InputTextareaModule,
+    CascadeSelectModule,
+    DropdownModule,
+    InputNumberModule,
+    FileUploadModule,
     ToastModule,
   ],
   exports: [
@@ -39,6 +48,10 @@ import { ToastModule } from 'primeng/toast';
     DialogModule,
     CalendarModule,
     InputTextareaModule,
+    CascadeSelectModule,
+    DropdownModule,
+    InputNumberModule,
+    FileUploadModule,
     ToastModule,
   ],
 })
