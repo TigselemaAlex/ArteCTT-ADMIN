@@ -18,6 +18,7 @@ export class AgendaComponent implements OnInit {
     this.formService.open$.subscribe({
       next: (resp) => {
         this.visible = resp.open;
+        console.log("no1");
       },
     });
   }
@@ -27,6 +28,7 @@ export class AgendaComponent implements OnInit {
     if (agendaItem) {
       this.formService.onOpen({ open: this.visible, data: agendaItem });
     } else {
+      console.log("no12");
       this.formService.onOpen({ open: this.visible });
     }
   }

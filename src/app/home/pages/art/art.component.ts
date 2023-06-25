@@ -1,6 +1,6 @@
 import { ARTWORK_DATA, Artwork } from 'src/app/shared/models/artwork.model';
 import { Component, OnInit } from '@angular/core';
-import { FormService } from './services/form.service';
+import { ArtformService } from './services/artform.service';
 
 
 @Component({
@@ -13,21 +13,23 @@ export class ArtComponent implements OnInit {
   selectedItems: Artwork[] = [];
   visible: boolean = false;
 
-  constructor(private formService: FormService) {}
+  constructor(private formService: ArtformService) {}
   ngOnInit(): void {
     this.artwork = ARTWORK_DATA;
     this.formService.open$.subscribe({
       next: (resp) => {
         this.visible = resp.open;
+        console.log("si1");
       },
     });
   }
 
-  onOpenForm(artworkItem?: Artwork): void {
+  onOpenArtForm(artworkItem?: Artwork): void {
     this.visible = true;
     if (artworkItem) {
       this.formService.onOpen({ open: this.visible, data: artworkItem });
     } else {
+      console.log('si12');
       this.formService.onOpen({ open: this.visible });
     }
   }

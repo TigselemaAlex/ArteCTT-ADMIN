@@ -6,7 +6,7 @@
       label="Nuevo"
       styleClass="p-button-success"
       icon="pi pi-plus"
-      (onClick)="onOpenForm()"
+      (onClick)="onOpenArtForm()"
     ></p-button>
 
     <p-button label="Eliminar" styleClass="p-button-danger"></p-button>
@@ -46,7 +46,7 @@
             <p-button
               styleClass="p-button-rounded p-button-info"
               icon="pi pi-pencil"
-              (onClick)="onOpenForm(item)"
+              (onClick)="onOpenArtForm(item)"
             ></p-button>
           </td>
         </tr>
@@ -54,4 +54,4 @@
     </p-table>
   </div>
 </div>
-<app-form *ngIf="visible"></app-form>
+<app-artwork-form *ngIf="visible"></app-artwork-form>

@@ -10,6 +10,7 @@ export class FormService {
   public open$ = this._open.asObservable();
 
   public onOpen(formAction: FormAction): void {
+    console.log("no2");
     this._open.next(formAction);
   }
 }
