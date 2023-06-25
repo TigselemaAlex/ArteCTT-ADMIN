@@ -20,7 +20,7 @@ export interface Artwork {
   code: string;
   other_code?: string;
   name: string;
-  centuryYear: string;
+  centuryYear?: string;
   deliveryType: DeliveryType;
   signatureLocation: string;
   country: string;
@@ -39,11 +39,13 @@ export interface Artwork {
   gravingWidth?: number;
   frameElementHeight?: number;
   frameElementWidth?: number;
-  imageURL: string;
+  imageURL?: string;
+  imageWordpressURL?: string;
   observation?: string;
-  location: string;
-  recordedBy: string;
-  reviewedBy: string;
+  description?: string;
+  location?: string;
+  recordedBy?: string;
+  reviewedBy?: string;
   registeredDate?: Date;
   author?: Author;
 }
@@ -66,7 +68,7 @@ export const ARTWORK_DATA: Artwork[] = [
     incomeYear: 2009,
     value: 350,
     imageURL:
-      'https://culturatungurahua.com/wp-content/uploads/2022/12/cuadro-24.gif',
+      'https://culturatungurahua.com/wp-content/uploads/2022/12/cuadro-7-1.gif',
     observation: 'observaciones',
     location: 'Museo casa de la cultura',
     recordedBy: 'Martha Molina',

@@ -10,7 +10,7 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-
+import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [],
   imports: [
@@ -25,6 +25,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     DialogModule,
     CalendarModule,
     InputTextareaModule,
+    ToastModule,
   ],
   exports: [
     CardModule,
@@ -38,6 +39,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     DialogModule,
     CalendarModule,
     InputTextareaModule,
+    ToastModule,
   ],
 })
 export class PrimengModule {}

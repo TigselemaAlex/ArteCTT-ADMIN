@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ARTWORK_DATA, Artwork } from 'src/app/shared/models/artwork.model';
-import { HttpClient } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
+import { Artwork } from 'src/app/shared/models/artwork.model';
+
+import { ArtworkService } from 'src/app/shared/services/artwork.service';
 
 @Component({
   selector: 'app-featured',
@@ -10,23 +12,41 @@ import { HttpClient } from '@angular/common/http';
 export class FeaturedComponent implements OnInit {
   artworks: Artwork[] = [];
   targetArtworks: Artwork[] = [];
-  constructor(private http: HttpClient) {}
+  constructor(
+    private artworkService: ArtworkService,
+    private messageServices: MessageService
+  ) {}
   ngOnInit(): void {
-    this.artworks = ARTWORK_DATA;
+    this.getAllArtworksService();
+    this.getFeaturedArtworksService();
   }
-  getUrlFromWordpress(imageURL: string): string {
-    // Reemplaza con la URL de la imagen que deseas cargar
-    const imageUrl = imageURL; // Especifica la URL de la imagen que deseas cargar
 
-    console.log(imageUrl);
-    this.http.get(imageUrl, { responseType: 'blob' }).subscribe((response) => {
-      /* const reader = new FileReader();
-      reader.onloadend = () => {
-        this.imageSrc = reader.result as string;
-        console.log(reader.result);
-      };
-      reader.readAsDataURL(response); */
+  private getAllArtworksService() {
+    this.artworkService.getAllArtworks().subscribe((resp) => {
+      this.artworks = resp;
     });
-    return 'asd';
+  }
+  private getFeaturedArtworksService() {
+    this.artworkService.getFeaturedArtworks().subscribe((resp) => {
+      this.targetArtworks = resp;
+      this.artworks = this.artworks.filter((art) => {
+        return !this.targetArtworks.some((target) => target.code === art.code);
+      });
+    });
+  }
+
+  saveFeatures() {
+    this.artworkService.saveFeatures(this.targetArtworks).subscribe({
+      next: (resp) => {
+        this.messageServices.add({
+          severity: 'success',
+          summary: 'Exitoso',
+          detail:
+            'Se han actualizado las obras destacadas en la aplicacion móvil',
+        });
+        this.getAllArtworksService();
+        this.getFeaturedArtworksService();
+      },
+    });
   }
 }

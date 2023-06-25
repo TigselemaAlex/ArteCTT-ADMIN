@@ -10,6 +10,8 @@ import { QrCodeComponent } from './pages/qr-code/qr-code.component';
 import { ArtComponent } from './pages/art/art.component';
 import { AgendaComponent } from './pages/agenda/agenda.component';
 import { FormComponent } from './pages/agenda/form/form.component';
+import { ArtworkService } from '../shared/services/artwork.service';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -22,5 +24,6 @@ import { FormComponent } from './pages/agenda/form/form.component';
     FormComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
+  providers: [ArtworkService, MessageService],
 })
 export class HomeModule {}

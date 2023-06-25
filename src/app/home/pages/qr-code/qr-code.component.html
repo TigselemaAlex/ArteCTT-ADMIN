@@ -27,17 +27,22 @@
           <div class="p-2 border-1 surface-border surface-card border-round">
             <div class="flex gap-4">
               <img
-                class="w-5rem shadow-2 flex-shrink-0 border-round"
-                src="https://u7.uidownload.com/vector/499/487/vector-sunset-waterscene-svg.jpg"
-                alt="{artwork.name}"
+                class="shadow-2 flex-shrink-0 border-round"
+                width="120"
+                height="120"
+                [src]="artwork.imageURL"
+                [alt]="artwork.name"
               />
               <div class="grid">
-                <div class="col-6">
+                <div class="col-6 font-bold">{{ artwork.name }}</div>
+                <div class="col-6 text-right text-blue-800">
+                  {{ artwork.centuryYear }}
+                </div>
+                <div class="col-12 text-green-700">
                   {{ artwork.author.fullName ?? "Anónimo" }}
                 </div>
-                <div class="col-6">{{ artwork.name }}</div>
-                <div class="col-6">{{ artwork.country }}</div>
-                <div class="col-6">{{ artwork.date }}</div>
+                <div class="col-12 text-green-700">{{ artwork.country }}</div>
+
                 <div class="col-12 justify-content-center">
                   <p-button
                     label="Generar QR"
