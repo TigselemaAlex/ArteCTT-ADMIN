@@ -1,4 +1,4 @@
-import { Artwork } from './artwork.model';
+import { ARTWORK_DATA, Artwork } from './artwork.model';
 
 export interface Author {
   id?: number;
@@ -7,3 +7,22 @@ export interface Author {
   bibliography: string;
   artworks?: Artwork[];
 }
+
+export const AUTHOR_DATA: Author[] = [
+  {
+    id: 1,
+    fullName: 'Fausto Holguín Vásconez',
+    address: '',
+    bibliography:
+      'Nacio en 1920 en Ambato Tungurahua',
+  },
+
+  {
+    id: 1,
+    fullName: 'Alex Tigselema',
+    address: '',
+    bibliography:
+      'Nacio en 1920 en Ambato Tungurahua',
+  },
+
+];

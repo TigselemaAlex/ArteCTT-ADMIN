@@ -28,6 +28,7 @@ export class AgendaComponent implements OnInit {
           console.log(resp.data);
           this.save(resp.data);
         }
+
       },
     });
   }
@@ -59,7 +60,9 @@ export class AgendaComponent implements OnInit {
     if (agendaItem.id) {
       observable = this.agendaService.update(agendaItem).subscribe();
     } else {
+
       observable = this.agendaService.save(agendaItem).subscribe();
+
     }
     observable.add(() => {
       this.loadAgenda();

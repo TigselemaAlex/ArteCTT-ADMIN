@@ -33,11 +33,13 @@ export class FormComponent implements OnInit {
           title: [this.agendaItem.title, Validators.required],
           imageURL: [this.agendaItem.imageURL, Validators.required],
         });
+
       },
     });
   }
 
   onClose(): void {
+
     this.formService.onOpen({ open: false, data: null, action: undefined });
     this.visible = false;
   }
@@ -56,5 +58,6 @@ export class FormComponent implements OnInit {
       data: this.form.getRawValue(),
       action: 'save',
     });
+
   }
 }
