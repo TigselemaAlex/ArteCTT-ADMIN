@@ -7,36 +7,36 @@
   [resizable]="false"
   (onHide)="onClose()"
 >
-  <form>
+  <form [formGroup]="form">
     <div class="flex flex-column gap-2">
-      <label>Fecha y Hora</label>
-      <p-calendar [showTime]="true" appendTo="body"></p-calendar>
+      <label>Titulo</label>
+      <input
+        pInputText
+        placeholder="Ingrese el titulo del evento"
+        formControlName="title"
+      />
     </div>
     <div class="flex flex-column gap-2">
-      <label>Actividad</label>
-      <input pInputText placeholder="Ingrese la actividad" />
+      <label>Titulo</label>
+      <input
+        pInputText
+        placeholder="Ingrese la URL de la imagen del evento"
+        formControlName="imageURL"
+      />
     </div>
-    <div class="flex flex-column gap-2">
-      <label>Descripcion</label>
-      <textarea
-        pInputTextarea
-        [autoResize]="true"
-        placeholder="Ingrese la descripcion de la actividad"
-        [maxLength]="255"
-      ></textarea>
-    </div>
-
     <div class="flex justify-content-end mt-2">
       <span class="p-buttonset">
         <p-button
           pRipple
           label="Aceptar"
           icon="pi pi-check"
+          (onClick)="onSubmit()"
           styleClass="p-button-raised p-button-text p-button-info"
         ></p-button>
         <p-button
           pRipple
           label="Cancelar"
+          (onClick)="onClose()"
           icon="pi pi-times"
           styleClass="p-button-raised p-button-text p-button-danger"
         ></p-button>

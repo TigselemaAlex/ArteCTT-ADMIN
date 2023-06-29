@@ -1,13 +1,13 @@
 <app-title></app-title>
-<div class="flex gap-2 p-2" [style]="{ height: 'calc(100% - 75.2px)' }">
+<div class="flex gap-2 p-2">
   <div [style]="{ width: '60%' }">
     <p-dataView
       #dv
       [value]="artworks"
       layout="grid"
       [paginator]="true"
-      [rows]="6"
-      filterBy="author,name"
+      [rows]="4"
+      filterBy="author.fullName,name"
     >
       <ng-template pTemplate="header">
         <p class="text-900 font-bold text-center text-xl m-0">Obras de Arte</p>
@@ -38,10 +38,12 @@
                 <div class="col-6 text-right text-blue-800">
                   {{ artwork.centuryYear }}
                 </div>
-                <div class="col-12 text-green-700">
+                <div class="col-12 text-green-700 text-sm">
                   {{ artwork.author.fullName ?? "Anónimo" }}
                 </div>
-                <div class="col-12 text-green-700">{{ artwork.country }}</div>
+                <div class="col-12 text-green-700 text-sm">
+                  {{ artwork.country }}
+                </div>
 
                 <div class="col-12 justify-content-center">
                   <p-button
@@ -62,16 +64,24 @@
   <div [style]="{ width: '40%' }">
     <p-card>
       <div
-        class="flex flex-column justify-content-center align-items-center gap-3"
+        class="flex flex-column justify-content-center align-items-center gap-1"
       >
-        <qrcode
-          #qr
-          class="border-1"
-          [qrdata]="qrCode"
-          [errorCorrectionLevel]="'M'"
-          [width]="400"
-          [allowEmptyString]="true"
-        ></qrcode>
+        <div #qrContent id="qrContent" class="flex flex-column">
+          <div *ngIf="selectedArtwork" class="text-sm font-bold">
+            <p class="m-1">Nombre: {{ selectedArtwork.name }}</p>
+            <p class="m-1">Autor: {{ selectedArtwork.author?.fullName }}</p>
+            <p class="m-1">Tecnica: {{ selectedArtwork.technique }}</p>
+            <p class="m-1">Soporte: {{ selectedArtwork.support }}</p>
+          </div>
+          <qrcode
+            #qr
+            class="border-1"
+            [qrdata]="qrCode"
+            [errorCorrectionLevel]="'M'"
+            [width]="300"
+            [allowEmptyString]="true"
+          ></qrcode>
+        </div>
 
         <p-button
           label="Imprimir"
@@ -79,6 +89,14 @@
           (onClick)="printFromQR(qr)"
           [disabled]="qrCode === ''"
           icon="pi pi-print"
+        ></p-button>
+        <p-button
+          label="Descargar"
+          styleClass="p-button-raised p-button-info"
+          (onClick)="dowloadToImage(qr)"
+          [disabled]="qrCode === ''"
+          icon="pi pi-image
+          "
         ></p-button>
       </div>
     </p-card>

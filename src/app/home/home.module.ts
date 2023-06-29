@@ -12,6 +12,7 @@ import { AgendaComponent } from './pages/agenda/agenda.component';
 import { FormComponent } from './pages/agenda/form/form.component';
 import { ArtworkService } from '../shared/services/artwork.service';
 import { MessageService } from 'primeng/api';
+import { AgendaService } from '../shared/services/agenda.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,6 @@ import { MessageService } from 'primeng/api';
     FormComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
-  providers: [ArtworkService, MessageService],
+  providers: [ArtworkService, MessageService, AgendaService],
 })
 export class HomeModule {}

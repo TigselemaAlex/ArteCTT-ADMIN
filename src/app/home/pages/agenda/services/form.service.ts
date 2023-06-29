@@ -17,4 +17,5 @@ export class FormService {
 export interface FormAction {
   open: boolean;
   data?: any;
+  action?: 'save';
 }

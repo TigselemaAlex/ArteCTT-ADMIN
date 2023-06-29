@@ -11,6 +11,7 @@ import { DialogModule } from 'primeng/dialog';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToastModule } from 'primeng/toast';
+import { SkeletonModule } from 'primeng/skeleton';
 @NgModule({
   declarations: [],
   imports: [
@@ -26,6 +27,7 @@ import { ToastModule } from 'primeng/toast';
     CalendarModule,
     InputTextareaModule,
     ToastModule,
+    SkeletonModule,
   ],
   exports: [
     CardModule,
@@ -40,6 +42,7 @@ import { ToastModule } from 'primeng/toast';
     CalendarModule,
     InputTextareaModule,
     ToastModule,
+    SkeletonModule,
   ],
 })
 export class PrimengModule {}

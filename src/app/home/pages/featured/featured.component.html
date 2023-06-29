@@ -1,5 +1,9 @@
 <app-title></app-title>
-<div class="picklist">
+<div class="p-2" *ngIf="loading">
+  <p-skeleton width="100%" height="calc(100vh - 110px)"></p-skeleton>
+</div>
+
+<div class="picklist" *ngIf="!loading">
   <p-pickList
     [source]="artworks"
     [target]="targetArtworks"
@@ -7,15 +11,15 @@
     targetHeader="Obras Destacadas"
     [dragdrop]="true"
     [responsive]="true"
-    [sourceStyle]="{ height: '30rem' }"
-    [targetStyle]="{ height: '30rem' }"
-    filterBy="name"
+    [sourceStyle]="{ height: '25rem' }"
+    [targetStyle]="{ height: '25rem' }"
+    filterBy="name,author.fullName"
     sourceFilterPlaceholder="Buscar por nombre"
     targetFilterPlaceholder="Buscar por nombre"
     breakpoint="1200px"
   >
     <ng-template let-artwork pTemplate="item">
-      <div class="flex flex-wrap p-2 align-items-center gap-3">
+      <div class="flex flex-wrap p-2 align-items-center gap-3" *ngIf="!loading">
         <img
           [src]="artwork.imageURL"
           alt="artwork.name"
@@ -23,16 +27,20 @@
           height="120"
         />
         <div class="flex-1 flex flex-column gap-2">
-          <span class="font-medium text-green-700">{{
+          <span class="font-medium text-green-700 text-sm">{{
             artwork.author?.fullName ?? "Anónimo"
           }}</span>
-          <span class="font-medium text-green-700">{{ artwork.country }}</span>
+          <span class="font-medium text-green-700 text-sm">{{
+            artwork.country
+          }}</span>
           <div class="flex align-items-center gap-2">
             <i class="pi pi-calendar text-sm"></i>
             <span class="text-blue-800">{{ artwork.centuryYear }}</span>
           </div>
         </div>
-        <span class="font-bold text-900">{{ artwork.name }}</span>
+        <span class="flex-1 font-bold text-900 text-right">{{
+          artwork.name
+        }}</span>
       </div>
     </ng-template>
   </p-pickList>
