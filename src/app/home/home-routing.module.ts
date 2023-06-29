@@ -5,6 +5,7 @@ import { FeaturedComponent } from './pages/featured/featured.component';
 import { QrCodeComponent } from './pages/qr-code/qr-code.component';
 import { ArtComponent } from './pages/art/art.component';
 import { AgendaComponent } from './pages/agenda/agenda.component';
+import { AuthorComponent } from './pages/author/author/author.component';
 
 // /home/asdasdad
 const routes: Routes = [
@@ -29,6 +30,10 @@ const routes: Routes = [
       {
         path: 'agenda',
         component: AgendaComponent,
+      },
+      {
+        path: 'author',
+        component: AuthorComponent,
       },
     ],
   },

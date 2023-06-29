@@ -28,10 +28,15 @@ export class SidenavComponent implements OnInit {
         routerLink:'./art'
       },
       {
+        label: 'Autores',
+        icon: PrimeIcons.USERS,
+        routerLink:'./author'
+      },
+      {
         label: 'Agenda',
         icon: PrimeIcons.FILE_EDIT,
         routerLink:'./agenda'
-      }
+      },
     ];
   }
 }

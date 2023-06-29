@@ -25,6 +25,9 @@ export class TitleComponent implements OnInit {
       case 'art':
         this.title = 'Obras de Arte';
         break;
+      case 'author':
+        this.title = 'Autores';
+        break;
       case 'agenda':
         this.title = 'Agenda Semanal';
         break;
