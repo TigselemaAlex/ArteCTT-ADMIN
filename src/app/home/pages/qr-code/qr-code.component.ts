@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import * as printJS from 'print-js';
 import { ARTWORK_DATA, Artwork } from 'src/app/shared/models/artwork.model';
 import { ArtworkService } from 'src/app/shared/services/artwork.service';
+import * as htmlToImage from 'html-to-image';
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+import * as download from 'downloadjs';
 
 @Component({
   selector: 'app-qr-code',
@@ -11,12 +14,15 @@ import { ArtworkService } from 'src/app/shared/services/artwork.service';
 export class QrCodeComponent implements OnInit {
   artworks: Artwork[] = [];
   qrCode: string = '';
+  qrCodeImage: any;
   imageTitle: string = '';
+  selectedArtwork!: Artwork | undefined;
+  @ViewChild('qrContent', { static: false }) qrContent!: any;
 
-  constructor(private artworkService: ArtworkService) {}
-  ngOnInit(): void {
+  constructor(private artworkService: ArtworkService) {
     this.getAllArtworksService();
   }
+  ngOnInit(): void {}
 
   private getAllArtworksService() {
     this.artworkService.getAllArtworks().subscribe((resp) => {
@@ -25,6 +31,7 @@ export class QrCodeComponent implements OnInit {
   }
 
   generateQRCode(artwork: Artwork): void {
+    this.selectedArtwork = artwork;
     this.qrCode = artwork.code;
     this.imageTitle = artwork.name!;
   }
@@ -34,15 +41,41 @@ export class QrCodeComponent implements OnInit {
     image = qr.qrcElement.nativeElement
       .querySelector('canvas')
       .toDataURL('image/png');
+    this.qrCodeImage = image;
+    const printContent = this.qrContent.nativeElement.innerHTML;
+    console.log(printContent);
 
     printJS({
-      printable: image,
+      printable: 'qrContent',
       headerStyle: 'text-align: center;',
-      type: 'image',
-      header: this.imageTitle,
+      type: 'html',
       showModal: true,
       modalMessage: 'Printing Qr Code...',
-      style: 'img { width: 800px;height: 800px;}',
+      style:
+        'div{ display: flex; justify-content: center; align-items: center; margin:0 auto;}',
+    });
+  }
+
+  dowloadToImage(qr: any): void {
+    let image = null;
+    image = qr.qrcElement.nativeElement
+      .querySelector('canvas')
+      .toDataURL('image/png');
+    this.qrCodeImage = image;
+
+    const printContent = this.qrContent.nativeElement;
+    printContent.style.display = 'flex';
+    printContent.style.gap = '2rem';
+    printContent.style.backgroundColor = '#fff';
+    printContent.style.color = '#000';
+    printContent.style.padding = '10px 10px 10px 10px';
+    htmlToImage.toJpeg(printContent).then((data) => {
+      download(data, this.selectedArtwork?.name + '.jpeg');
+      printContent.style.display = '';
+      printContent.style.gap = '';
+      printContent.style.backgroundColor = '';
+      printContent.style.color = '';
+      printContent.style.padding = '';
     });
   }
 }

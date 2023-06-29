@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { delay, finalize, timeout } from 'rxjs';
 import { Artwork } from 'src/app/shared/models/artwork.model';
 
 import { ArtworkService } from 'src/app/shared/services/artwork.service';
@@ -12,18 +13,21 @@ import { ArtworkService } from 'src/app/shared/services/artwork.service';
 export class FeaturedComponent implements OnInit {
   artworks: Artwork[] = [];
   targetArtworks: Artwork[] = [];
+  loading: boolean = true;
   constructor(
     private artworkService: ArtworkService,
     private messageServices: MessageService
-  ) {}
-  ngOnInit(): void {
+  ) {
     this.getAllArtworksService();
-    this.getFeaturedArtworksService();
   }
+  ngOnInit(): void {}
 
   private getAllArtworksService() {
-    this.artworkService.getAllArtworks().subscribe((resp) => {
-      this.artworks = resp;
+    this.artworkService.getAllArtworks().subscribe({
+      next: (artworks) => {
+        this.artworks = artworks;
+        this.getFeaturedArtworksService();
+      },
     });
   }
   private getFeaturedArtworksService() {
@@ -32,6 +36,9 @@ export class FeaturedComponent implements OnInit {
       this.artworks = this.artworks.filter((art) => {
         return !this.targetArtworks.some((target) => target.code === art.code);
       });
+      setTimeout(() => {
+        this.loading = false;
+      }, 300);
     });
   }
 
@@ -44,8 +51,6 @@ export class FeaturedComponent implements OnInit {
           detail:
             'Se han actualizado las obras destacadas en la aplicacion móvil',
         });
-        this.getAllArtworksService();
-        this.getFeaturedArtworksService();
       },
     });
   }
