@@ -5,7 +5,7 @@ import { FeaturedComponent } from './pages/featured/featured.component';
 import { QrCodeComponent } from './pages/qr-code/qr-code.component';
 import { ArtComponent } from './pages/art/art.component';
 import { AgendaComponent } from './pages/agenda/agenda.component';
-import { AuthorComponent } from './pages/author/author/author.component';
+import { AuthorComponent } from './pages/author/author.component';
 
 // /home/asdasdad
 const routes: Routes = [

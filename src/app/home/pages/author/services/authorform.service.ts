@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ArtformService {
+export class AuthorformService {
 
   private _open = new BehaviorSubject<FormAction>({ open: false });
   constructor() {}

@@ -19,7 +19,6 @@ export class ArtComponent implements OnInit {
     this.formService.open$.subscribe({
       next: (resp) => {
         this.visible = resp.open;
-        console.log("si1");
       },
     });
   }
@@ -29,7 +28,6 @@ export class ArtComponent implements OnInit {
     if (artworkItem) {
       this.formService.onOpen({ open: this.visible, data: artworkItem });
     } else {
-      console.log('si12');
       this.formService.onOpen({ open: this.visible });
     }
   }

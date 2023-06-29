@@ -1,0 +1,46 @@
+<p-dialog
+  header="Registro de autores"
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '500px' }"
+  [draggable]="false"
+  [resizable]="false"
+  
+>
+  <form>
+    <div class="flex flex-column gap-2">
+      <label>Nombres Completos</label>
+      <input pInputText placeholder="Ingrese los nombres completos" />
+    </div>
+    <div class="flex flex-column gap-2">
+      <label [style.margin-top]="'10px'">Dirección</label>
+      <input pInputText placeholder="Ingrese la dirección" />
+    </div>
+    <div class="flex flex-column gap-2">
+      <label [style.margin-top]="'10px'">Biografía</label>
+      <textarea
+        pInputTextarea
+        [autoResize]="true"
+        placeholder="Ingrese la biografía del autor"
+        [maxLength]="1000"
+      ></textarea>
+    </div>
+
+    <div class="flex justify-content-end mt-2">
+      <span class="p-buttonset">
+        <p-button
+          pRipple
+          label="Aceptar"
+          icon="pi pi-check"
+          styleClass="p-button-raised p-button-text p-button-info"
+        ></p-button>
+        <p-button
+          pRipple
+          label="Cancelar"
+          icon="pi pi-times"
+          styleClass="p-button-raised p-button-text p-button-danger"
+        ></p-button>
+      </span>
+    </div>
+  </form>
+</p-dialog>

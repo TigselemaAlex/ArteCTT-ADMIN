@@ -13,7 +13,8 @@ import { FormComponent } from './pages/agenda/form/form.component';
 import { ArtworkFormComponent } from './pages/art/artwork-form/artwork-form.component';
 import { ArtworkService } from '../shared/services/artwork.service';
 import { MessageService } from 'primeng/api';
-import { AuthorComponent } from './pages/author/author/author.component';
+import { AuthorComponent } from './pages/author/author.component'; 
+import { AuthorFormComponent } from './pages/author/author-form/author-form.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AuthorComponent } from './pages/author/author/author.component';
     FormComponent,
     ArtworkFormComponent,
     AuthorComponent,
+    AuthorFormComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
   providers: [ArtworkService, MessageService],
