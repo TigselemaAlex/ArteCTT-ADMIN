@@ -1,38 +1,41 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { Agenda } from 'src/app/shared/models/agenda.model';
-import { FormService } from '../services/form.service';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Author } from 'src/app/shared/models/author.model';
+import { AuthorFormService } from '../services/author-form.service';
 import { MessageService } from 'primeng/api';
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-author-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnInit {
+export class AuthorFormComponent implements OnInit {
   visible: boolean = false;
-  agendaItem!: Agenda;
+  author!: Author;
   form: FormGroup = this.fb.group({
     id: [null],
-    title: ['', Validators.required],
-    imageURL: ['', Validators.required],
+    fullName: ['', Validators.required],
+    address: [''],
+    bibliography: [''],
   });
 
   constructor(
-    private formService: FormService,
     private fb: FormBuilder,
+    private formService: AuthorFormService,
     private messageService: MessageService
   ) {}
+
   ngOnInit(): void {
     this.formService.open$.subscribe({
       next: (resp) => {
         this.visible = resp.open;
+        this.author = resp.data;
         if (resp.data == null) return;
-        this.agendaItem = resp.data;
         this.form = this.fb.group({
-          id: [this.agendaItem.id],
-          title: [this.agendaItem.title, Validators.required],
-          imageURL: [this.agendaItem.imageURL, Validators.required],
+          id: [this.author.id],
+          fullName: [this.author.fullName, Validators.required],
+          address: [this.author.address],
+          bibliography: [this.author.bibliography],
         });
       },
     });
@@ -52,7 +55,6 @@ export class FormComponent implements OnInit {
       });
       return;
     }
-    this.visible = false;
     this.formService.onOpen({
       open: false,
       data: this.form.getRawValue(),

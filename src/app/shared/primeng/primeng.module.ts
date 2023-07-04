@@ -17,6 +17,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 
 import { ToastModule } from 'primeng/toast';
 import { SkeletonModule } from 'primeng/skeleton';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 @NgModule({
   declarations: [],
   imports: [
@@ -37,6 +38,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     FileUploadModule,
     ToastModule,
     SkeletonModule,
+    ConfirmDialogModule,
   ],
   exports: [
     CardModule,
@@ -56,6 +58,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     FileUploadModule,
     ToastModule,
     SkeletonModule,
+    ConfirmDialogModule,
   ],
 })
 export class PrimengModule {}

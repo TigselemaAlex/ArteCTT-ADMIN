@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as printJS from 'print-js';
-import { ARTWORK_DATA, Artwork } from 'src/app/shared/models/artwork.model';
+import { Artwork } from 'src/app/shared/models/artwork.model';
 import { ArtworkService } from 'src/app/shared/services/artwork.service';
 import * as htmlToImage from 'html-to-image';
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';

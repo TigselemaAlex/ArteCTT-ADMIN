@@ -6,47 +6,45 @@
       label="Nuevo"
       styleClass="p-button-success"
       icon="pi pi-plus"
-      (onClick)="onOpenArtForm()"
+      (onClick)="onOpenForm()"
     ></p-button>
   </div>
   <div class="card">
     <p-table
-      [value]="artwork"
-      [(selection)]="selectedItems"
-      dataKey="code"
+      [value]="authors"
+      dataKey="id"
       [paginator]="true"
       [rows]="5"
+      [tableStyle]="{ height: '100px' }"
+      [styleClass]="'p-datatable-sm'"
     >
       <ng-template pTemplate="header">
         <tr>
-          <th>Código</th>
-          <th>Nombre</th>
-          <th>Autor</th>
-          <th>Técnica</th>
-          <th>Soporte</th>
-          <th>Imagen</th>
+          <th>Nombre Completo</th>
+          <th>Dirección</th>
+          <th>Biografía</th>
           <th>Editar/Eliminar</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-item>
         <tr>
-          <td>{{ item.code }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.author.fullName }}</td>
-          <td>{{ item.technique }}</td>
-          <td>{{ item.support }}</td>
-          <td><img [src]="item.imageURL" alt="" srcset="" width="50" /></td>
+          <td>{{ item.fullName }}</td>
+          <td>{{ item.address }}</td>
+          <td>
+            {{ item.bibliography | slice : 0 : 200
+            }}<span *ngIf="item.bibliography.length > 200">...</span>
+          </td>
           <td>
             <div class="flex gap-1">
               <p-button
                 styleClass="p-button-rounded p-button-info"
                 icon="pi pi-pencil"
-                (onClick)="onOpenArtForm(item)"
+                (onClick)="onOpenForm(item)"
               ></p-button>
               <p-button
                 styleClass="p-button-rounded p-button-danger"
                 icon="pi pi-times"
-                (onClick)="onDelete(item)"
+                (onClick)="deleteSelected(item.id)"
               ></p-button>
             </div>
           </td>
@@ -55,4 +53,5 @@
     </p-table>
   </div>
 </div>
-<app-artwork-form *ngIf="visible"></app-artwork-form>
+
+<app-author-form *ngIf="visible"></app-author-form>

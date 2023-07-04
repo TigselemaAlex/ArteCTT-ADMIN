@@ -45,6 +45,7 @@ export class FeaturedComponent implements OnInit {
   saveFeatures() {
     this.artworkService.saveFeatures(this.targetArtworks).subscribe({
       next: (resp) => {
+        console.log(resp);
         this.messageServices.add({
           severity: 'success',
           summary: 'Exitoso',

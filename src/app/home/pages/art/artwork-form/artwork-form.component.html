@@ -2,7 +2,7 @@
   header="Registro de Pinturas"
   [(visible)]="visible"
   [modal]="true"
-  [style]="{ width: '550px'}"
+  [style]="{ width: '750px' }"
   [draggable]="false"
   [resizable]="false"
   (onHide)="onClose()"
@@ -10,152 +10,335 @@
   <form [formGroup]="formGroup">
     <div class="flex flex-row gap-4">
       <div class="flex flex-column gap-2">
-        <label>Código</label>
-        <input pInputText placeholder="Ingrese el código." />
+        <label>Código *</label>
+        <input
+          pInputText
+          placeholder="Ingrese el código."
+          formControlName="code"
+        />
       </div>
       <div class="flex flex-column gap-2">
         <label>Otro código</label>
-        <input pInputText placeholder="Ingrese el código." />
+        <input
+          pInputText
+          placeholder="Ingrese el código."
+          formControlName="other_code"
+        />
       </div>
     </div>
     <div class="flex flex-column gap-2">
-      <label  [style.margin-top]="'10px'">Nombre</label>
-      <input pInputText placeholder="Ingrese el nombre de la obra." />
+      <label [style.margin-top]="'10px'">Nombre *</label>
+      <input
+        pInputText
+        placeholder="Ingrese el nombre de la obra."
+        formControlName="name"
+      />
     </div>
 
     <div class="flex flex-row gap-4">
       <div class="flex flex-column gap-2">
         <label [style.margin-top]="'10px'">Siglo / Año</label>
-        <input pInputText placeholder="Ingrese el siglo o año." />
+        <input
+          pInputText
+          placeholder="Ingrese el siglo o año."
+          formControlName="centuryYear"
+        />
       </div>
       <div class="flex flex-column gap-2">
-        <label [style.margin-top]="'10px'">Tipo de entrega</label>
-        <p-dropdown formControlName="deliveryType" [options]="deliveryTypeOptions" placeholder="Seleccione un tipo" ></p-dropdown>
+        <label [style.margin-top]="'10px'">Tipo de entrega *</label>
+        <p-dropdown
+          formControlName="deliveryType"
+          [options]="deliveryTypeOptions"
+          placeholder="Seleccione un tipo"
+          formControlName="deliveryType"
+        ></p-dropdown>
       </div>
     </div>
 
     <div class="flex flex-column gap-2">
       <label [style.margin-top]="'10px'">Ubicación de la firma</label>
-      <input pInputText placeholder="Ingrese la ubicación." />
+      <input
+        pInputText
+        placeholder="Ingrese la ubicación."
+        formControlName="signatureLocation"
+      />
     </div>
     <div class="flex flex-column gap-2">
-      <label [style.margin-top]="'10px'">Técnica</label>
-      <input pInputText placeholder="Ingrese la técnica." />
+      <label [style.margin-top]="'10px'">Técnica *</label>
+      <input
+        pInputText
+        placeholder="Ingrese la técnica."
+        formControlName="technique"
+      />
     </div>
     <div class="flex flex-column gap-2">
-      <label [style.margin-top]="'10px'">Soporte</label>
-      <input pInputText placeholder="Ingrese del soporte." />
+      <label [style.margin-top]="'10px'">Soporte *</label>
+      <input
+        pInputText
+        placeholder="Ingrese del soporte."
+        formControlName="support"
+      />
     </div>
 
     <div class="flex flex-row gap-5">
       <div class="flex flex-column gap-2">
-        <label [style.margin-top]="'10px'">Estado de Conservación</label>
-        <p-dropdown formControlName="deliveryType" [options]="conservationStateOptions" placeholder="Seleccione un tipo" ></p-dropdown>
+        <label [style.margin-top]="'10px'">Estado de Conservación *</label>
+        <p-dropdown
+          formControlName="deliveryType"
+          [options]="conservationStateOptions"
+          placeholder="Seleccione un tipo"
+          formControlName="conservationState"
+        ></p-dropdown>
       </div>
       <div class="flex flex-column gap-2">
-        <label [style.margin-top]="'10px'">Estado de Integridad</label>
-        <p-dropdown formControlName="deliveryType" [options]="integrityStateOptions" placeholder="Seleccione un tipo" ></p-dropdown>
+        <label [style.margin-top]="'10px'">Estado de Integridad *</label>
+        <p-dropdown
+          formControlName="deliveryType"
+          [options]="integrityStateOptions"
+          placeholder="Seleccione un tipo"
+          formControlName="integrityState"
+        ></p-dropdown>
       </div>
     </div>
 
     <div class="flex flex-column gap-2">
       <label [style.margin-top]="'10px'">País</label>
-      <input pInputText placeholder="Ingrese el país." />
+      <input
+        pInputText
+        placeholder="Ingrese el país."
+        formControlName="country"
+      />
     </div>
 
     <div class="flex flex-column gap-2">
       <label [style.margin-top]="'10px'">Forma de Ingreso</label>
-      <input pInputText placeholder="Ingrese la forma" />
+      <input
+        pInputText
+        placeholder="Ingrese la forma"
+        formControlName="incomeForm"
+      />
     </div>
 
     <div class="flex flex-row gap-3">
       <div class="flex flex-column gap-2">
-        <label [style.margin-top]="'10px'">Precio</label>
-        <p-inputNumber inputId="minmaxfraction" mode="decimal" [minFractionDigits]="1" [maxFractionDigits]="10"  placeholder="0,00"> </p-inputNumber>
+        <label [style.margin-top]="'10px'">Precio de Ingreso</label>
+        <p-inputNumber
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="10"
+          placeholder="0,00"
+          formControlName="incomePrice"
+        >
+        </p-inputNumber>
       </div>
       <div class="flex flex-column gap-2">
         <label [style.margin-top]="'10px'">Año de Ingreso</label>
-        <p-calendar  view="year" dateFormat="yy" inputId="yearpicker"  placeholder="0000"></p-calendar>
+        <p-calendar
+          view="year"
+          dateFormat="yy"
+          inputId="yearpicker"
+          placeholder="0000"
+          formControlName="incomeYear"
+        ></p-calendar>
       </div>
     </div>
 
-    <div class="flex flex-row gap-3">   
+    <div class="flex flex-row gap-3">
       <div class="flex flex-column gap-2">
         <label [style.margin-top]="'10px'">Valor</label>
-        <p-inputNumber inputId="minmaxfraction" mode="decimal" [minFractionDigits]="1" [maxFractionDigits]="10" placeholder="0,00"> </p-inputNumber>
+        <p-inputNumber
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="10"
+          placeholder="0,00"
+          formControlName="value"
+        >
+        </p-inputNumber>
       </div>
       <div class="flex flex-column gap-2">
         <label [style.margin-top]="'10px'">Altura de la Pieza</label>
-        <p-inputNumber inputId="minmaxfraction" mode="decimal" [minFractionDigits]="1" [maxFractionDigits]="10" placeholder="0,00"> </p-inputNumber>
+        <p-inputNumber
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="10"
+          placeholder="0,00"
+          formControlName="pieceHeight"
+        >
+        </p-inputNumber>
       </div>
     </div>
 
-    <div class="flex flex-row gap-3">   
+    <div class="flex flex-row gap-3">
       <div class="flex flex-column gap-2">
         <label [style.margin-top]="'10px'">Ancho de la Pieza</label>
-        <p-inputNumber inputId="minmaxfraction" mode="decimal" [minFractionDigits]="1" [maxFractionDigits]="10" placeholder="0,00"> </p-inputNumber>
+        <p-inputNumber
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="10"
+          placeholder="0,00"
+          formControlName="pieceWidth"
+        >
+        </p-inputNumber>
       </div>
       <div class="flex flex-column gap-2">
         <label [style.margin-top]="'10px'">Profundidad de la Pieza</label>
-        <p-inputNumber inputId="minmaxfraction" mode="decimal" [minFractionDigits]="1" [maxFractionDigits]="10" placeholder="0,00"> </p-inputNumber>
+        <p-inputNumber
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="10"
+          placeholder="0,00"
+          formControlName="pieceDeep"
+        >
+        </p-inputNumber>
       </div>
     </div>
 
-    <div class="flex flex-row gap-3">   
+    <div class="flex flex-row gap-3">
       <div class="flex flex-column gap-2">
         <label [style.margin-top]="'10px'">Altura del Grabado</label>
-        <p-inputNumber inputId="minmaxfraction" mode="decimal" [minFractionDigits]="1" [maxFractionDigits]="10" placeholder="0,00"> </p-inputNumber>
+        <p-inputNumber
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="10"
+          placeholder="0,00"
+          formControlName="gravingHeight"
+        >
+        </p-inputNumber>
       </div>
       <div class="flex flex-column gap-2">
         <label [style.margin-top]="'10px'">Ancho del Grabado</label>
-        <p-inputNumber inputId="minmaxfraction" mode="decimal" [minFractionDigits]="1" [maxFractionDigits]="10" placeholder="0,00"> </p-inputNumber>
+        <p-inputNumber
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="10"
+          placeholder="0,00"
+          formControlName="gravingWidth"
+        >
+        </p-inputNumber>
       </div>
     </div>
 
-    <div class="flex flex-row gap-3">   
+    <div class="flex flex-row gap-3">
       <div class="flex flex-column gap-2">
         <label [style.margin-top]="'10px'">Altura del Marco</label>
-        <p-inputNumber inputId="minmaxfraction" mode="decimal" [minFractionDigits]="1" [maxFractionDigits]="10" placeholder="0,00"> </p-inputNumber>
+        <p-inputNumber
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="10"
+          placeholder="0,00"
+          formControlName="frameElementHeight"
+        >
+        </p-inputNumber>
       </div>
       <div class="flex flex-column gap-2">
-      <label [style.margin-top]="'10px'">Ancho del Marco</label>
-      <p-inputNumber inputId="minmaxfraction" mode="decimal" [minFractionDigits]="1" [maxFractionDigits]="10" placeholder="0,00"> </p-inputNumber>
-    </div>
+        <label [style.margin-top]="'10px'">Ancho del Marco</label>
+        <p-inputNumber
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="10"
+          placeholder="0,00"
+          formControlName="frameElementWidth"
+        >
+        </p-inputNumber>
+      </div>
     </div>
 
     <div class="flex flex-column gap-2">
       <label [style.margin-top]="'10px'">Ubicación</label>
-      <input pInputText placeholder="Ingrese la ubicación de la obra." />
+      <input
+        pInputText
+        placeholder="Ingrese la ubicación de la obra."
+        formControlName="location"
+      />
     </div>
     <div class="flex flex-column gap-2">
-      <label [style.margin-top]="'10px'">Grabado por</label>
-      <input pInputText placeholder="Ingrese el nombre." />
+      <label [style.margin-top]="'10px'">Registrado por</label>
+      <input
+        pInputText
+        placeholder="Ingrese el nombre."
+        formControlName="recordedBy"
+      />
     </div>
     <div class="flex flex-column gap-2">
       <label [style.margin-top]="'10px'">Revisado por</label>
-      <input pInputText placeholder="Ingrese el nombre." />
+      <input
+        pInputText
+        placeholder="Ingrese el nombre."
+        formControlName="reviewedBy"
+      />
     </div>
-    <div class="flex flex-column gap-2 ">
+    <div class="flex flex-column gap-2">
       <label [style.margin-top]="'10px'">Fecha de Registro</label>
-      <p-calendar [showTime]="true" appendTo="body" placeholder="dd/mm/aaaa 00:00"></p-calendar>
+      <p-calendar
+        appendTo="body"
+        placeholder="dd/mm/aaaa"
+        dateFormat="dd/mm/yy"
+        formControlName="registeredDate"
+      ></p-calendar>
     </div>
     <div class="flex flex-column gap-2">
-      <label [style.margin-top]="'10px'">Autor</label>
-      <p-dropdown formControlName="author" [options]="authorOptions" placeholder="Seleccione un autor"></p-dropdown>
+      <label [style.margin-top]="'10px'">Autor *</label>
+      <p-dropdown
+        formControlName="author"
+        [options]="authorOptions"
+        placeholder="Seleccione un autor"
+        formControlName="author"
+      ></p-dropdown>
     </div>
     <div class="flex flex-column gap-2">
-      <label [style.margin-top]="'10px'">Imagen</label>   
-      <p-fileUpload mode="basic" chooseLabel="Seleccione la imagen" name="demo[]" accept="image/*"></p-fileUpload>
+      <label [style.margin-top]="'10px'">Imagen *</label>
+      <div
+        *ngIf="artworkItem?.imageURL"
+        class="flex gap-3 justify-content-end align-items-center"
+      >
+        <span>Imagen actual:</span>
+        <img [src]="artworkItem.imageURL" alt="" srcset="" width="80" />
+      </div>
+      <p-fileUpload
+        #fu
+        mode="advanced"
+        chooseLabel="Imagen"
+        [showUploadButton]="false"
+        cancelLabel="Eliminar"
+        accept="image/*"
+        name="image"
+      ></p-fileUpload>
     </div>
     <div class="flex flex-column gap-2">
       <label [style.margin-top]="'10px'">Observaciones</label>
-      <textarea rows="4" cols="30" pInputTextarea [autoResize]="true"></textarea>
+      <textarea
+        rows="4"
+        cols="30"
+        pInputTextarea
+        [autoResize]="true"
+        formControlName="observation"
+      ></textarea>
+    </div>
+    <div class="flex flex-column gap-2">
+      <label [style.margin-top]="'10px'">Descripción</label>
+      <textarea
+        rows="4"
+        cols="30"
+        pInputTextarea
+        [autoResize]="true"
+        formControlName="description"
+      ></textarea>
     </div>
     <div class="flex justify-content-end mt-2">
       <span class="p-buttonset">
         <p-button
           pRipple
           label="Aceptar"
+          (onClick)="onSubmit(fu.files[0])"
           icon="pi pi-check"
           styleClass="p-button-raised p-button-text p-button-info"
         ></p-button>

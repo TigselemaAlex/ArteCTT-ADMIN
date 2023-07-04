@@ -12,8 +12,14 @@ import { AgendaComponent } from './pages/agenda/agenda.component';
 import { FormComponent } from './pages/agenda/form/form.component';
 import { ArtworkFormComponent } from './pages/art/artwork-form/artwork-form.component';
 import { ArtworkService } from '../shared/services/artwork.service';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { AgendaService } from '../shared/services/agenda.service';
+import { AuthorComponent } from './pages/author/author.component';
+import { AuthorFormComponent } from './pages/author/form/form.component';
+import { FormService } from './pages/agenda/services/form.service';
+import { AuthorFormService } from './pages/author/services/author-form.service';
+import { ArtformService } from './pages/art/services/artform.service';
+import { AuthorService } from '../shared/services/author.service';
 
 @NgModule({
   declarations: [
@@ -25,8 +31,19 @@ import { AgendaService } from '../shared/services/agenda.service';
     AgendaComponent,
     FormComponent,
     ArtworkFormComponent,
+    AuthorComponent,
+    AuthorFormComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
-  providers: [ArtworkService, MessageService, AgendaService],
+  providers: [
+    ArtworkService,
+    MessageService,
+    AgendaService,
+    FormService,
+    AuthorFormService,
+    ArtformService,
+    AuthorService,
+    ConfirmationService,
+  ],
 })
 export class HomeModule {}

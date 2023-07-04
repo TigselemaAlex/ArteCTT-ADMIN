@@ -1,28 +1,38 @@
 <p-dialog
-  header="Registro de actividades"
+  header="Registro de autor"
   [(visible)]="visible"
   [modal]="true"
-  [style]="{ width: '500px' }"
+  [style]="{ width: '800px' }"
   [draggable]="false"
   [resizable]="false"
   (onHide)="onClose()"
 >
   <form [formGroup]="form">
     <div class="flex flex-column gap-2">
-      <label>Titulo</label>
+      <label>Nombre completo</label>
       <input
         pInputText
-        placeholder="Ingrese el titulo del evento"
-        formControlName="title"
+        placeholder="Ingrese el nombre completo del autor"
+        formControlName="fullName"
       />
     </div>
     <div class="flex flex-column gap-2">
-      <label>Imagen en Wordpress</label>
+      <label>Dirección</label>
       <input
         pInputText
-        placeholder="Ingrese la URL de la imagen del evento"
-        formControlName="imageURL"
+        placeholder="Ingrese la direccion del autor"
+        formControlName="address"
       />
+    </div>
+    <div class="flex flex-column gap-2">
+      <label>Biografía</label>
+      <textarea
+        rows="5"
+        cols="30"
+        pInputTextarea
+        formControlName="bibliography"
+        [autoResize]="true"
+      ></textarea>
     </div>
     <div class="flex justify-content-end mt-2">
       <span class="p-buttonset">

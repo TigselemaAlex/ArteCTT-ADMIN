@@ -28,6 +28,9 @@ export class TitleComponent implements OnInit {
       case 'agenda':
         this.title = 'Agenda Semanal';
         break;
+      case 'author':
+        this.title = 'Autores';
+        break;
     }
   }
 }
