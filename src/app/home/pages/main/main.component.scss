@@ -2,11 +2,15 @@
   width: min-content;
   background-color: #18213e;
   height: 100%;
+  position: fixed;
+  z-index: 4001;
 }
 
 .sidenav-rounting {
   width: 100%;
   height: 100%;
+  margin-top: 60px;
+  margin-left: 200px;
 }
 
 .flex {
