@@ -67,12 +67,18 @@
         class="flex flex-column justify-content-center align-items-center gap-1"
       >
         <div #qrContent id="qrContent" class="flex flex-column">
-          <div *ngIf="selectedArtwork" class="text-sm font-bold">
-            <p class="m-1">Nombre: {{ selectedArtwork.name }}</p>
-            <p class="m-1">Autor: {{ selectedArtwork.author?.fullName }}</p>
-            <p class="m-1">Tecnica: {{ selectedArtwork.technique }}</p>
-            <p class="m-1">Soporte: {{ selectedArtwork.support }}</p>
+          <div class="flex gap-1 align-items-center" *ngIf="selectedArtwork">
+            <div class="text-sm font-bold">
+              <p class="m-1">Nombre: {{ selectedArtwork.name }}</p>
+              <p class="m-1">Autor: {{ selectedArtwork.author?.fullName }}</p>
+              <p class="m-1">Tecnica: {{ selectedArtwork.technique }}</p>
+              <p class="m-1">Soporte: {{ selectedArtwork.support }}</p>
+            </div>
+            <div>
+              <img src="./assets/images/logo.svg" alt="" width="120" />
+            </div>
           </div>
+
           <qrcode
             #qr
             class="border-1"

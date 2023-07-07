@@ -1,9 +1,9 @@
 import { AUTHOR_DATA, Author } from './author.model';
 
 export enum DeliveryType {
-  firmado = 'FIRMADO',
-  atribuido = 'ATRIBUIDO',
-  documento = 'DOCUMENTO',
+  FIRMADO = 'FIRMADO',
+  ATRIBUIDO = 'ATRIBUIDO',
+  DOCUMENTO = 'DOCUMENTO',
 }
 
 export const deliveryTypeOptions = Object.keys(DeliveryType).map((key) => ({
@@ -12,20 +12,22 @@ export const deliveryTypeOptions = Object.keys(DeliveryType).map((key) => ({
 }));
 
 export enum ConservationState {
-  bueno = 'BUENO',
-  regular = 'REGULAR',
-  malo = 'MALO',
+  BUENO = 'BUENO',
+  REGULAR = 'REGULAR',
+  MALO = 'MALO',
 }
 
-export const conservationStateOptions = Object.keys(ConservationState).map((key) => ({
-  value: key,
-  label: ConservationState[key as keyof typeof ConservationState],
-}));
+export const conservationStateOptions = Object.keys(ConservationState).map(
+  (key) => ({
+    value: key,
+    label: ConservationState[key as keyof typeof ConservationState],
+  })
+);
 
 export enum IntegrityState {
-  completo = 'COMPLETO',
-  incompleto = 'INCOMPLETO',
-  unido = 'UNIDO',
+  COMPLETO = 'COMPLETO',
+  INCOMPLETO = 'INCOMPLETO',
+  UNIDO = 'UNIDO',
 }
 
 export const integrityStateOptions = Object.keys(IntegrityState).map((key) => ({
@@ -39,8 +41,8 @@ export interface Artwork {
   name: string;
   centuryYear?: string;
   deliveryType: DeliveryType;
-  signatureLocation: string;
-  country: string;
+  signatureLocation?: string;
+  country?: string;
   technique: string;
   support: string;
   conservationState: ConservationState;
@@ -66,38 +68,3 @@ export interface Artwork {
   registeredDate?: Date;
   author?: Author;
 }
-
-export const ARTWORK_DATA: Artwork[] = [
-  {
-    code: 'COD1',
-    other_code: 'COD12',
-    name: 'pintura 1',
-    centuryYear: 'SIGO XX',
-    deliveryType: DeliveryType.atribuido,
-    signatureLocation: 'Borde inferior derecho',
-    country: 'Ecuador',
-    technique: 'Acuarela',
-    support: 'Cartulina',
-    conservationState: ConservationState.bueno,
-    integrityState: IntegrityState.completo,
-    incomeForm: 'Compra',
-    incomePrice: 200,
-    incomeYear: 2009,
-    value: 350,
-    pieceHeight: 79.00,
-    pieceWidth: 59.00,
-    pieceDeep: 0.00,
-    gravingHeight: 0.00,
-    gravingWidth: 0.00,
-    frameElementHeight: 94.00,
-    frameElementWidth: 73.00,
-    imageURL:
-      'https://culturatungurahua.com/wp-content/uploads/2022/12/cuadro-7-1.gif',
-    observation: 'observaciones',
-    location: 'Museo casa de la cultura',
-    recordedBy: 'Martha Molina',
-    reviewedBy: 'Juan Luis Siguenza',
-    registeredDate: new Date(),
-    author: AUTHOR_DATA[0],
-  },
-];
