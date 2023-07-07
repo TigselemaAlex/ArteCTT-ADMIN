@@ -1,12 +1,16 @@
 {
   "name": "arte-ctt-admin",
   "version": "0.0.0",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "electron": "ng build && electron .",
+    "electron:build": "ng build && electron-builder build --publish=never"
+
   },
   "private": true,
   "dependencies": {
@@ -21,7 +25,9 @@
     "@angular/router": "^15.2.0",
     "angularx-qrcode": "^15.0.1",
     "downloadjs": "^1.4.7",
+
     "html-to-image": "^1.11.11",
+    "ngx-electron": "^2.2.0",
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
     "primeng": "^15.4.1",
@@ -36,6 +42,8 @@
     "@angular/compiler-cli": "^15.2.0",
     "@types/downloadjs": "^1.4.3",
     "@types/jasmine": "~4.3.0",
+    "electron-builder": "^24.4.0",
+    "electron": "^25.2.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -43,5 +51,17 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
+  },
+  "build": {
+    "appId": "com.electron.myapp",
+    "productName": "ArteCTT",
+    "files": [
+      "*.js",
+      "dist/**/*",
+      "node_modules/**/*"
+    ],
+    "win":{
+      "icon": "dist/favicon.ico"
+    }
   }
 }

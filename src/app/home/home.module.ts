@@ -20,6 +20,7 @@ import { FormService } from './pages/agenda/services/form.service';
 import { AuthorFormService } from './pages/author/services/author-form.service';
 import { ArtformService } from './pages/art/services/artform.service';
 import { AuthorService } from '../shared/services/author.service';
+import { IpcService } from '../shared/services/ipc.service';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AuthorService } from '../shared/services/author.service';
     ArtformService,
     AuthorService,
     ConfirmationService,
+    IpcService,
   ],
 })
 export class HomeModule {}

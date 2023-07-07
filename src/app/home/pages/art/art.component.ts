@@ -82,6 +82,11 @@ export class ArtComponent implements OnInit, OnDestroy {
         },
       });
     }
+    this.formService.onOpen({
+      open: this.visible,
+      action: undefined,
+      data: null,
+    });
   }
 
   onDelete(artwork: Artwork) {

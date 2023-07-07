@@ -313,6 +313,15 @@
         name="image"
       ></p-fileUpload>
     </div>
+
+    <div class="flex flex-column gap-2">
+      <label [style.margin-top]="'10px'">URL de la imagen en Wordpress</label>
+      <input
+        pInputText
+        placeholder="Ingrese la URL de la imagen en Wordpress."
+        formControlName="imageWordpressURL"
+      />
+    </div>
     <div class="flex flex-column gap-2">
       <label [style.margin-top]="'10px'">Observaciones</label>
       <textarea
@@ -345,6 +354,7 @@
         <p-button
           pRipple
           label="Cancelar"
+          (onClick)="onClose()"
           icon="pi pi-times"
           styleClass="p-button-raised p-button-text p-button-danger"
         ></p-button>

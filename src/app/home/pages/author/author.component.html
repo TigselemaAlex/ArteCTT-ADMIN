@@ -17,7 +17,23 @@
       [rows]="5"
       [tableStyle]="{ height: '100px' }"
       [styleClass]="'p-datatable-sm'"
+      [globalFilterFields]="['fullName']"
+      #dt1
     >
+      <ng-template pTemplate="caption">
+        <div class="flex">
+          <span class="p-input-icon-left ml-auto">
+            <i class="pi pi-search"></i>
+            <input
+              #srch
+              pInputText
+              type="text"
+              (input)="dt1.filterGlobal(srch.value, 'contains')"
+              placeholder="Nombre"
+            />
+          </span>
+        </div>
+      </ng-template>
       <ng-template pTemplate="header">
         <tr>
           <th>Nombre Completo</th>

@@ -16,7 +16,23 @@
       dataKey="code"
       [paginator]="true"
       [rows]="5"
+      [globalFilterFields]="['name', 'author.fullName']"
+      #dt1
     >
+      <ng-template pTemplate="caption">
+        <div class="flex">
+          <span class="p-input-icon-left ml-auto">
+            <i class="pi pi-search"></i>
+            <input
+              #srch
+              pInputText
+              type="text"
+              (input)="dt1.filterGlobal(srch.value, 'contains')"
+              placeholder="Nombre o autor"
+            />
+          </span>
+        </div>
+      </ng-template>
       <ng-template pTemplate="header">
         <tr>
           <th>Código</th>
