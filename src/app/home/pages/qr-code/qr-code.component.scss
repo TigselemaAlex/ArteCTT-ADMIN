@@ -1,0 +1,26 @@
+:host ::ng-deep {
+  .qr-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .qr-code__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .qr-code__image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .qr-code__button {
+    margin-top: 1rem;
+  }
+}
