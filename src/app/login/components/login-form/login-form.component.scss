@@ -1,0 +1,26 @@
+:host ::ng-deep {
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .login-form__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .login-form__button {
+    margin-top: 1rem;
+  }
+  .p-password {
+    width: 100% !important;
+    input {
+      width: 100% !important;
+    }
+  }
+}
